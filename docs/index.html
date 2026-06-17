@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>古着販売パートナー募集｜自分のペースで副収入｜株式会社タキオン</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="在宅・スマホだけで始める古着販売副業。商品は会社が仕入れてお届け。メルカリ・ヤフオクで販売するだけ。コツコツ型の方に向いています。">
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber:   #F5A623;
+      --amber-d: #E09010;
+      --blue:    #4A90D9;
+      --blue-d:  #2F78C5;
+      --mint:    #E8F4E8;
+      --bg:      #FAFAF7;
+      --white:   #FFFFFF;
+      --text:    #333333;
+      --gray:    #6B7280;
+      --lightgray: #F3F4F6;
+      --border:  #E5E7EB;
+      --radius:  14px;
+      --shadow:  0 4px 20px rgba(0,0,0,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; }
+
+    /* ─── Sticky Header ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .site-header .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .site-header .logo span { color: var(--amber); }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .btn-tel {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1.5px solid var(--amber);
+      color: var(--amber);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .btn-tel:hover { background: var(--amber); color: #fff; text-decoration: none; }
+    .btn-cta-sm {
+      background: var(--amber);
+      color: #fff;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .btn-cta-sm:hover { background: var(--amber-d); transform: translateY(-1px); }
+
+    /* スマホ限定の改行 */
+    .br-sp { display: none; }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 40%, #FCD34D 100%);
+      padding: 64px 20px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5A623' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(245,166,35,0.2);
+      border: 1px solid rgba(245,166,35,0.4);
+      border-radius: 999px;
+      padding: 4px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #92400E;
+      margin-bottom: 18px;
+    }
+    .hero-kicker {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400E;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+    .hero-kicker strong { color: #B45309; border-bottom: 2px solid var(--amber); }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.3;
+      color: #1C1917;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #B45309;
+      display: block;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #44403C;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .hero-feat {
+      background: rgba(255,255,255,0.75);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #44403C;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+    .btn-cta-hero {
+      display: inline-block;
+      background: var(--amber);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 999px;
+      padding: 16px 40px;
+      box-shadow: 0 8px 28px rgba(245,166,35,0.45);
+      transition: all 0.15s;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .btn-cta-hero:hover { background: var(--amber-d); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,166,35,0.5); text-decoration: none; color: #fff; }
+    .hero-note { font-size: 0.8rem; color: #78716C; margin-top: 10px; }
+
+    /* ─── Trust Belt ─── */
+    .trust-belt {
+      background: #4A9D5B;
+      color: #fff;
+      padding: 14px 20px;
+      overflow: hidden;
+    }
+    .trust-belt-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    .trust-item {
+      padding: 4px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      border-right: 1px solid rgba(255,255,255,0.3);
+    }
+    .trust-item:last-child { border-right: none; }
+
+    /* ─── Sections ─── */
+    .section { padding: 72px 20px; }
+    .section:nth-child(even) { background: var(--white); }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #1C1917;
+    }
+    .section-lead {
+      font-size: 0.98rem;
+      color: var(--gray);
+      max-width: 620px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    /* ─── Target cards ─── */
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .target-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .target-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+    .target-card .t-icon { font-size: 2rem; margin-bottom: 10px; }
+    .target-card h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1C1917;
+      line-height: 1.5;
+      text-wrap: balance;
+      min-height: 2.9em;
+    }
+    .target-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    .target-card .t-quote {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #FFFBEB;
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.82rem;
+      color: #78716C;
+      font-style: italic;
+    }
+
+    /* ─── Steps ─── */
+    .steps-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0;
+      align-items: start;
+    }
+    .step-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .step-card .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    .step-card .step-icon { font-size: 2.4rem; margin-bottom: 10px; }
+    .step-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    .step-card p strong { color: #B45309; font-weight: 700; }
+    .step-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      padding-top: 50px;
+      color: var(--amber);
+      font-size: 1.8rem;
+    }
+
+    /* ─── Sim cards ─── */
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .sim-card {
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      border: 2px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .sim-card.featured {
+      border-color: var(--amber);
+      box-shadow: 0 8px 30px rgba(245,166,35,0.18);
+    }
+    .sim-card.premium {
+      border-color: var(--blue);
+      box-shadow: 0 8px 30px rgba(74,144,217,0.15);
+    }
+    .sim-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .sim-card.featured .sim-badge { background: #FEF3C7; color: #92400E; }
+    .sim-card.premium .sim-badge { background: #EFF6FF; color: #1E40AF; }
+    .sim-icon { font-size: 2rem; margin-bottom: 8px; }
+    .sim-level { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gray); text-transform: uppercase; margin-bottom: 4px; }
+    .sim-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; color: #1C1917; }
+    .sim-card .sim-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .sim-card .sim-row:last-of-type { border-bottom: none; }
+    .sim-card .sim-row .label { color: var(--gray); }
+    .sim-card .sim-row .value { font-weight: 700; }
+    .sim-earn-box {
+      margin-top: 14px;
+      padding: 12px;
+      background: #FFFBEB;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .sim-earn-box .earn-label { font-size: 0.75rem; color: var(--gray); }
+    .sim-earn-box .earn-num { font-size: 1.6rem; font-weight: 800; color: var(--amber); line-height: 1.2; }
+    .sim-earn-box .earn-sub { font-size: 0.75rem; color: var(--gray); }
+    .sim-card.premium .sim-earn-box { background: #EFF6FF; }
+    .sim-card.premium .sim-earn-box .earn-num { color: var(--blue); }
+    .sim-card .sim-quote { margin-top: 12px; font-size: 0.8rem; color: var(--gray); font-style: italic; line-height: 1.6; }
+
+    /* ─── Distribution table ─── */
+    .dist-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      font-size: 0.92rem;
+    }
+    .dist-table thead { background: #5C4A3A; color: #fff; }
+    .dist-table th { padding: 12px 16px; text-align: center; font-weight: 700; }
+    .dist-table th:first-child { text-align: left; }
+    .dist-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); text-align: center; background: var(--white); }
+    .dist-table td:first-child { text-align: left; font-weight: 700; }
+    .dist-table tbody tr:last-child td { border-bottom: none; }
+    .dist-table tbody tr:hover td { background: #FFFBEB; }
+    .dist-table .highlight td { background: #FEF3C7; font-weight: 700; }
+    .dist-table .highlight td:nth-child(2) { color: #B45309; font-size: 1.05rem; }
+    .dist-note {
+      margin-top: 16px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #78716C;
+    }
+    .dist-note strong { color: #92400E; }
+    .dist-pin {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--mint);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #166534;
+    }
+    .dist-pin strong { color: #15803D; }
+    .dist-pin--gold {
+      background: #FEF3C7;
+      color: #78540B;
+    }
+    .dist-pin--gold strong { color: #B45309; }
+
+    /* ─── Special reward ─── */
+    .reward-box {
+      background: linear-gradient(135deg, #5C4A3A, #786150);
+      border-radius: 20px;
+      padding: 40px 36px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .reward-box::before {
+      content: "🏆";
+      position: absolute;
+      right: 30px; top: 24px;
+      font-size: 5rem;
+      opacity: 0.85;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+    }
+    .reward-box .rew-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .reward-box h3 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      color: #FDE68A;
+    }
+    .reward-box p { font-size: 0.92rem; opacity: 0.85; margin-bottom: 20px; line-height: 1.8; }
+    .reward-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .reward-feat {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+    }
+    .reward-feat .rf-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .reward-feat .rf-label { font-weight: 700; color: #FDE68A; margin-bottom: 2px; font-size: 0.92rem; }
+    .reward-feat .rf-text { opacity: 0.8; font-size: 0.85rem; line-height: 1.6; }
+    .reward-note { font-size: 0.78rem; opacity: 0.55; line-height: 1.7; }
+
+    /* ─── Two-path section ─── */
+    .twopath {
+      background: var(--bg);
+      padding: 56px 20px;
+    }
+    .twopath-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .twopath-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    @media (max-width: 600px) {
+      .twopath-grid { grid-template-columns: 1fr; }
+    }
+    .twopath-card {
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--border);
+      background: var(--white);
+    }
+    .twopath-card.beginner { border-color: #FCD34D; }
+    .twopath-card.expert   { border-color: #93C5FD; }
+    .twopath-card .tp-icon { font-size: 2rem; margin-bottom: 10px; }
+    .twopath-card .tp-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 999px;
+      padding: 3px 12px;
+      margin-bottom: 12px;
+    }
+    .beginner .tp-tag { background: #FEF3C7; color: #92400E; }
+    .expert   .tp-tag { background: #DBEAFE; color: #1D4ED8; }
+    .twopath-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: #1C1917; line-height: 1.4; }
+    .twopath-card p  { font-size: 0.87rem; color: var(--gray); line-height: 1.8; margin: 0; }
+    .twopath-card ul { margin: 10px 0 0; padding-left: 18px; }
+    .twopath-card ul li { font-size: 0.85rem; color: var(--gray); line-height: 1.9; }
+
+    /* ─── Why section ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .why-card .w-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #1C1917; }
+    .why-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.75; }
+
+    /* ─── FAQ ─── */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: #1C1917;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 10px;
+    }
+    .faq-q::before { content: "Q"; color: var(--amber); font-weight: 800; flex-shrink: 0; }
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.8;
+      padding-left: 22px;
+    }
+
+    /* ─── Nudge section ─── */
+    .nudge {
+      background: var(--amber);
+      padding: 52px 20px;
+      text-align: center;
+    }
+    .nudge h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .nudge p { font-size: 0.97rem; color: rgba(255,255,255,0.88); max-width: 500px; margin: 0 auto 24px; line-height: 1.8; }
+    .btn-cta-nudge {
+      display: inline-block;
+      background: #fff;
+      color: var(--amber-d);
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 999px;
+      padding: 14px 36px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+      transition: all 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-cta-nudge:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); text-decoration: none; color: var(--amber-d); }
+
+    /* ─── CTA Final ─── */
+    .cta-final {
+      background: linear-gradient(135deg, #5C4A3A, #786150);
+      padding: 72px 20px;
+      color: #fff;
+      text-align: center;
+    }
+    .cta-final h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #FDE68A;
+    }
+    .cta-final .cta-copy { font-size: 0.97rem; opacity: 0.82; max-width: 520px; margin: 0 auto 10px; line-height: 1.8; }
+    .cta-final .no-pressure { font-size: 0.82rem; opacity: 0.55; margin-bottom: 32px; }
+    .cta-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .btn-cta-main {
+      background: var(--amber);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      border-radius: 999px;
+      padding: 15px 36px;
+      box-shadow: 0 8px 26px rgba(245,166,35,0.4);
+      transition: all 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-cta-main:hover { background: var(--amber-d); transform: translateY(-2px); }
+    .btn-cta-talk {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 14px 28px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .btn-cta-talk:hover { background: rgba(255,255,255,0.18); }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .contact-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      font-size: 0.9rem;
+      text-align: left;
+      min-width: 200px;
+    }
+    .contact-item .c-label { font-size: 0.72rem; opacity: 0.55; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-item .c-val { font-weight: 700; color: #FDE68A; font-size: 1rem; }
+    .contact-item .c-sub { font-size: 0.75rem; opacity: 0.6; margin-top: 2px; }
+    .company-info { font-size: 0.82rem; opacity: 0.45; line-height: 1.8; }
+
+    /* ─── Inline CTA (mid-page) ─── */
+    .mid-cta {
+      background: #FFFBEB;
+      border: 1.5px solid #FDE68A;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 40px 0 0;
+    }
+    .mid-cta p { font-size: 0.9rem; color: #78716C; margin: 0; }
+    .mid-cta strong { color: #92400E; }
+    .btn-mid-cta {
+      background: var(--amber);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      padding: 10px 24px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .btn-mid-cta:hover { background: var(--amber-d); transform: translateY(-1px); }
+
+    /* ─── Note style ─── */
+    .note { font-size: 0.8rem; color: var(--gray); line-height: 1.7; margin-top: 10px; }
+    .note-list { padding-left: 1.1rem; }
+    .note-list li { margin: 3px 0; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #111827;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.78rem;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .br-sp { display: inline; }
+      /* Header */
+      .site-header { padding: 0 16px; height: 56px; }
+      .site-header .btn-tel span { display: none; }
+      .btn-cta-sm { font-size: 0.8rem; padding: 8px 16px; }
+
+      /* Hero */
+      .hero { padding: 56px 16px 48px; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero h1 em { font-size: 2rem; }
+      .hero-kicker { font-size: 0.86rem; }
+      .hero-features { gap: 8px; }
+      .hero-feat { font-size: 0.8rem; padding: 6px 12px; }
+      .section-lead { font-size: 0.9rem; }
+      /* target heading natural height on mobile */
+      .target-card h3 { min-height: 0; }
+
+      /* Sections */
+      .section { padding: 48px 16px; }
+      .section-title { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+      .section-inner { padding: 0; }
+
+      /* Two-path */
+      .twopath { padding: 44px 16px; }
+      .twopath-grid { grid-template-columns: 1fr; }
+
+      /* Target cards */
+      .target-grid { grid-template-columns: 1fr; gap: 12px; }
+
+      /* Steps */
+      .steps-row { grid-template-columns: 1fr; gap: 4px; }
+      .step-arrow { transform: rotate(90deg); padding: 4px 0; font-size: 1.4rem; }
+      .step-card { padding: 20px 16px; }
+
+      /* Sim cards */
+      .sim-grid { grid-template-columns: 1fr; }
+      .sim-card { padding: 22px 18px; }
+      .earn-num { font-size: 1.6rem; }
+
+      /* Distribution table */
+      .dist-table { font-size: 0.82rem; table-layout: fixed; }
+      .dist-table th, .dist-table td { padding: 10px 4px; }
+      .dist-table th:first-child, .dist-table td:first-child { padding-left: 12px; }
+      .dist-table th:last-child, .dist-table td:last-child { padding-right: 10px; }
+      .dist-table th:nth-child(1), .dist-table td:nth-child(1) { width: 30%; }
+      .dist-table th:nth-child(2), .dist-table td:nth-child(2) { width: 46%; }
+      .dist-table th:nth-child(3), .dist-table td:nth-child(3) { width: 24%; white-space: nowrap; }
+      .dist-table small { font-size: 0.66rem; display: block; line-height: 1.4; }
+
+      /* Reward box */
+      .reward-box { padding: 28px 18px; }
+      .reward-box::before { display: none; }
+      .reward-box h3 { font-size: 1.2rem; }
+
+      /* Why grid */
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+      /* CTA buttons */
+      .cta-buttons-row { flex-direction: column; align-items: center; }
+      .cta-buttons-row a, .cta-buttons-row button { width: 100%; max-width: 320px; text-align: center; }
+
+      /* Mid-CTA */
+      .mid-cta { flex-direction: column; text-align: center; }
+
+      /* Contact items */
+      .contact-grid { flex-direction: column; align-items: stretch; }
+      .contact-item { min-width: unset; }
+
+      /* Nudge */
+      .nudge { padding: 44px 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-belt-inner { gap: 0; }
+      .trust-item { padding: 4px 10px; font-size: 0.75rem; }
+
+      .hero h1 { font-size: 1.6rem; }
+      .hero h1 em { font-size: 1.85rem; }
+
+      /* Why grid → 1 col on very small screens */
+      .why-grid { grid-template-columns: 1fr; }
+
+      /* Table: make amounts smaller */
+      .dist-table small { font-size: 0.72rem; }
+
+      /* Header: hide tel button entirely on very small */
+      .btn-tel { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     STICKY HEADER
+════════════════════════════════════ -->
+<header class="site-header">
+  <div class="logo">
+    株式会社<span>タキオン</span><br>
+    <span style="font-size:0.7rem;font-weight:600;color:#6B7280;letter-spacing:0.04em;">古着販売パートナー募集</span>
+  </div>
+  <div class="header-actions">
+    <a href="tel:0665616102" class="btn-tel">📞 <span>06-6561-6102</span></a>
+    <button class="btn-cta-sm" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談する →</button>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">📣 メルカリ古着販売パートナー募集</div>
+    <p class="hero-kicker">会社が仕入れた古着を、メルカリ等で<br class="br-sp"><strong>代理出品・販売</strong>していただくお仕事です。</p>
+    <h1>
+      未経験でも、誰でも。<br>
+      自分のペースで、
+      <em>着実に収入を育てる。</em>
+    </h1>
+    <p class="hero-sub">
+      古着をメルカリで販売するだけ。<br>
+      スマホがあれば、今日から始められます。
+    </p>
+    <div class="hero-features">
+      <span class="hero-feat">📦 商品は会社が仕入れてお届け</span>
+      <span class="hero-feat">📱 販売はメルカリ・ヤフオクで</span>
+      <span class="hero-feat">🏠 自宅・好きな時間帯でOK</span>
+      <span class="hero-feat">💰 仕入れ費用ゼロ</span>
+    </div>
+    <button class="btn-cta-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      無料で詳しく話を聞く
+    </button>
+    <p class="hero-note">強引な勧誘は一切しておりません。お問い合わせだけでもOKです。</p>
+  </div>
+</section>
+
+<!-- Trust Belt -->
+<div class="trust-belt">
+  <div class="trust-belt-inner">
+    <div class="trust-item">🏢 大阪市内の会社が運営</div>
+    <div class="trust-item">📦 商品仕入れは会社負担</div>
+    <div class="trust-item">🤝 契約書ありで安心</div>
+    <div class="trust-item">📱 スマホのみでOK</div>
+    <div class="trust-item">✅ ノルマなし</div>
+  </div>
+</div>
+
+<!-- Two Path -->
+<section class="twopath">
+  <div class="twopath-inner">
+    <div style="text-align:center;margin-bottom:4px">
+      <span class="section-eyebrow">YOUR STARTING POINT</span>
+    </div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:4px">あなたの経験に合わせて、<br>スタートが選べます</h2>
+    <p style="text-align:center;font-size:0.92rem;color:var(--gray);max-width:520px;margin:0 auto 0">どちらのスタートでも、ご相談はいつでも歓迎です。</p>
+    <div class="twopath-grid">
+
+      <div class="twopath-card beginner">
+        <div class="tp-icon">🌱</div>
+        <div class="tp-tag">初めての方・経験が少ない方</div>
+        <h3>まずはパートナープランで<br>安心してスタート</h3>
+        <p>古着販売の経験がなくても大丈夫。仕入れ費用はゼロ、ノルマもなし。分からないことはすぐに聞ける環境を用意しています。売れ筋・写真の撮り方・値付けのコツまで、一緒に歩みながらきっちりお伝えします。迷わず取り組めるのが、このプランの一番の強みです。</p>
+        <ul>
+          <li>仕入れ費用ゼロ・リスクなし</li>
+          <li>商品は会社が用意してお届け</li>
+          <li>わからなければすぐ相談できる</li>
+          <li>実力がついたら自由販売へ移行OK</li>
+        </ul>
+      </div>
+
+      <div class="twopath-card expert">
+        <div class="tp-icon">💼</div>
+        <div class="tp-tag">すでに販売経験がある方</div>
+        <h3>最初から自由仕入れプランで<br>フルスタートも可能</h3>
+        <p>「すでに売り方は分かっている」という方には、最初から直接仕入れ（kg単価買い取り）で始める自由販売プランもご案内できます。売上の100%があなたの利益。自分のペース・自分の判断で動きたい方に向いています。</p>
+        <ul>
+          <li>仕入れ：kg単価500円で直接買い取り</li>
+          <li>販売プラットフォーム・価格・タイミングは自由</li>
+          <li>売上は100%あなたのもの</li>
+          <li>ご相談の上、判断させていただきます</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 1: ターゲット
+════════════════════════════════════ -->
+<section class="section" id="target">
+  <div class="section-inner">
+    <div class="section-eyebrow">WHO IS THIS FOR</div>
+    <h2 class="section-title">こんな方、一緒にやりませんか？</h2>
+    <p class="section-lead">「派手に稼ぐより、コツコツ積み上げることが好きな方」に特に向いています。</p>
+
+    <div class="target-grid">
+      <div class="target-card">
+        <div class="t-icon">😊</div>
+        <h3>子育てが一段落した<br>お母さん</h3>
+        <p>「子どもが少し手を離れて、自分の時間が持てるようになった」そんなタイミングに、無理なく始められる仕事です。</p>
+        <div class="t-quote">「自分のペースで」「家でできる」</div>
+      </div>
+      <div class="target-card">
+        <div class="t-icon">💼</div>
+        <h3>副業を探している<br>会社員</h3>
+        <p>毎月決まった時間が取れなくても大丈夫。売りたいときに出品、それだけでOKです。</p>
+        <div class="t-quote">「週末だけでも可」「自分のペースで」</div>
+      </div>
+      <div class="target-card">
+        <div class="t-icon">🏠</div>
+        <h3>在宅でできる<br>仕事を探している方</h3>
+        <p>外出や対面接客は一切ありません。自宅で、スマホで、マイペースに進められます。</p>
+        <div class="t-quote">「時間の制約なし」「頑張った分だけ返ってくる」</div>
+      </div>
+      <div class="target-card">
+        <div class="t-icon">📦</div>
+        <h3>メルカリが<br>好き・得意な方</h3>
+        <p>すでにフリマアプリを使っている方なら、そのスキルをそのまま活かせます。シニアの方も歓迎。</p>
+        <div class="t-quote">「スマホひとつで」「無理なく続けられる」</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 2: ステップ
+════════════════════════════════════ -->
+<section class="section" id="how">
+  <div class="section-inner">
+    <div class="section-eyebrow">HOW IT WORKS</div>
+    <h2 class="section-title">やることは、たったの3ステップ</h2>
+    <p class="section-lead">難しいことは何もありません。<br>商品を受け取ったら、撮影・出品、発送するだけのお仕事です。</p>
+
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-icon">📦</div>
+        <h3>商品を受け取る</h3>
+        <p>会社が仕入れた古着を最初は30点ほどお渡しします。<br><br>
+          <strong>🏭 大阪近郊の方</strong>は倉庫まで直接ピックアップが可能。実際に商品を手に取りながら選んで持ち帰れます<br class="br-sp">（優先対応）。<br><br>
+          <strong>📦 遠方の方</strong>は配送でお届け。商品はこちらでランダムに選定します。</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-icon">📸</div>
+        <h3>写真を撮って出品する</h3>
+        <p>メルカリやヤフオクに出品。慣れれば2〜3時間で10点ほど出品できます。<br><br>出品したURLを<strong>専用アプリ</strong>に入力するだけで商品を一元管理。<strong>売上も自動集計</strong>されるので、面倒な計算は不要です。</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-icon">💰</div>
+        <h3>売れたら発送・収益を受け取る</h3>
+        <p>売れた分の純利益を分配。<strong>専用アプリ</strong>から請求書を依頼するだけで、収益とお支払い分がすぐに分かります。<br><br>PayPayでの受け取りにも対応しています。</p>
+      </div>
+    </div>
+
+    <!-- Mid-page CTA -->
+    <div class="mid-cta">
+      <p><strong>「自分にできるかな？」</strong>という方へ。最初の30点は一緒に進め方を確認しながら進めます。</p>
+      <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">まず話を聞いてみる →</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 3: シミュレーション
+════════════════════════════════════ -->
+<section class="section" id="simulation">
+  <div class="section-inner">
+    <div class="section-eyebrow">INCOME SIMULATION</div>
+    <h2 class="section-title">実際いくら稼げるの？<br>正直に公開します。</h2>
+    <p class="section-lead">頑張った分だけ、きちんと返ってきます。<br>難しいことは抜きにして、正直な数字を見てください。</p>
+
+    <div class="sim-grid">
+      <!-- スタート -->
+      <div class="sim-card">
+        <div class="sim-icon">🌱</div>
+        <div class="sim-level">START PLAN</div>
+        <h3>スタートプラン<br><span style="font-size:0.85rem;font-weight:600;color:var(--gray)">慣れながら少しずつ始める</span></h3>
+        <div class="sim-row"><span class="label">出品点数</span><span class="value">30〜50点/月</span></div>
+        <div class="sim-row"><span class="label">販売点数</span><span class="value">約20〜35点</span></div>
+        <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約2〜3万円</span></div>
+        <div class="sim-row"><span class="label">分配率</span><span class="value">55%</span></div>
+        <div class="sim-earn-box">
+          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-num">1.1〜1.65万円</div>
+          <div class="earn-sub">ちょっとしたお小遣い以上の感覚</div>
+        </div>
+        <p class="sim-quote">「まずここから始める方がほとんどです」</p>
+      </div>
+
+      <!-- 慣れてきたら -->
+      <div class="sim-card featured">
+        <span class="sim-badge">人気プラン</span>
+        <div class="sim-icon">🚀</div>
+        <div class="sim-level">STEADY PLAN</div>
+        <h3>慣れてきたら<br><span style="font-size:0.85rem;font-weight:600;color:var(--gray)">コツをつかんで安定してきた頃</span></h3>
+        <div class="sim-row"><span class="label">出品点数</span><span class="value">100〜150点/月</span></div>
+        <div class="sim-row"><span class="label">販売点数</span><span class="value">約70〜105点</span></div>
+        <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約7〜10万円</span></div>
+        <div class="sim-row"><span class="label">分配率</span><span class="value">60%</span></div>
+        <div class="sim-earn-box">
+          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-num">4.2〜6万円</div>
+          <div class="earn-sub">本業の給与に近い収入になってきます</div>
+        </div>
+        <p class="sim-quote">「出品のスピードも上がり、楽しくなる段階」</p>
+      </div>
+
+      <!-- ベテラン -->
+      <div class="sim-card premium">
+        <span class="sim-badge">上位パートナー</span>
+        <div class="sim-icon">💎</div>
+        <div class="sim-level">VETERAN PLAN</div>
+        <h3>ベテランパートナー<br><span style="font-size:0.85rem;font-weight:600;color:var(--gray)">本格的に取り組んでいる方</span></h3>
+        <div class="sim-row"><span class="label">出品点数</span><span class="value">200点以上/月</span></div>
+        <div class="sim-row"><span class="label">販売点数</span><span class="value">約150点以上</span></div>
+        <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約15〜20万円</span></div>
+        <div class="sim-row"><span class="label">分配率</span><span class="value">70%</span></div>
+        <div class="sim-earn-box">
+          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-num">10.5〜14万円</div>
+          <div class="earn-sub">専業に近い収入レベル</div>
+        </div>
+        <p class="sim-quote">「達成すると特別仕入れ特典も」</p>
+      </div>
+    </div>
+
+    <ul class="note note-list" style="margin-top:16px">
+      <li>販売価格は商品により異なります<br class="br-sp">（目安：800〜1,500円/点）</li>
+      <li>メルカリ手数料・送料を差し引いた純利益からの分配です</li>
+      <li>個人差があります。上記はあくまで参考値です</li>
+    </ul>
+
+    <!-- Mid-page CTA 2 -->
+    <div class="mid-cta">
+      <p><strong>まずはスタートプランから。</strong>小さく始めて、慣れてから増やせばOKです。</p>
+      <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料で相談する →</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 4: 分配制度
+════════════════════════════════════ -->
+<section class="section" id="distribution">
+  <div class="section-inner">
+    <div class="section-eyebrow">REVENUE SHARE</div>
+    <h2 class="section-title">積み上げるほど、報酬が増える。<br>シンプルな成果連動制。</h2>
+    <p class="section-lead">ノルマはありません。これまでの実績が積み上がるほど、あなたの成果報酬の割合が上がっていきます。</p>
+
+    <table class="dist-table">
+      <thead>
+        <tr>
+          <th style="text-align:left">累計の成果<br><small style="font-weight:400;font-size:0.78em;opacity:0.85;">（純利益）</small></th>
+          <th>あなたの成果報酬</th>
+          <th>運営費</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>〜5万円</td>
+          <td>55%<br><small style="font-weight:400;color:#78716C">（例：5万円なら27,500円）</small></td>
+          <td>45%</td>
+        </tr>
+        <tr>
+          <td>5万〜10万円</td>
+          <td>60%<br><small style="font-weight:400;color:#78716C">（例：10万円なら60,000円）</small></td>
+          <td>40%</td>
+        </tr>
+        <tr class="highlight">
+          <td>10万〜15万円</td>
+          <td>65%<br><small style="font-weight:400;color:#92400E">（例：15万円なら97,500円）</small></td>
+          <td>35%</td>
+        </tr>
+        <tr class="highlight">
+          <td>累計15万円〜</td>
+          <td>70%<br><small style="font-weight:400;color:#92400E">（以降は完全自由販売も選べます）</small></td>
+          <td>30%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="dist-note">
+      売上の一部は<strong>システム運営費（商品の原価・手数料など）</strong>として会社に充当され、残りはすべて<strong>あなたへの成果報酬</strong>となります。
+    </div>
+
+    <div class="dist-pin">
+      <span>📌</span>
+      <span><strong>毎月リセットされません。</strong>締めは毎月行いますが、成果はゼロに戻らず累計で積み上がります。これまでの累計が増えるほど、成果報酬のステージが上がっていく仕組みです。</span>
+    </div>
+
+    <div class="dist-pin dist-pin--gold">
+      <span>🎓</span>
+      <span><strong>累計15万円に到達したら、ひとつの区切り。</strong>ここまで積み上げた頃には、商品の目利き・値付け・売れ筋の見極めなど、ひと通りのスキルが身についています。その実力をもって、自分で仕入れて自由に売る<strong>「完全自由販売」へ移行</strong>できます（もちろん、そのまま続けてもOKです）。</span>
+    </div>
+
+    <p class="note" style="margin-top:12px">※ 純利益 ＝ 販売価格 − 販売手数料 − 送料 − 梱包費。返品が確定したあとに算出します。月ごとに締めるのは集計のタイミングを区切るためで、成果そのものは累計で評価します。</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 5: 特別制度
+════════════════════════════════════ -->
+<section class="section" id="special">
+  <div class="section-inner">
+    <div class="section-eyebrow">SPECIAL PROGRAM</div>
+    <h2 class="section-title">さらに上を目指したい方へ</h2>
+
+    <div class="reward-box">
+      <div class="rew-eyebrow">TOP PARTNER SPECIAL</div>
+      <h3>🏆 累計15万円を達成した方は<br>「完全自由販売」へ移行できます</h3>
+      <p>これまでの成果が累計15万円に到達したパートナーには、特別な仕入れ制度への移行をご案内します。ここまで積み上げた頃には、ひと通りのスキルが身についているはず——それが、ひとつの区切りです。<br>そこに至るまでの道のりも、ひとりで抱え込む必要はありません。売上を伸ばすコツ、商品の目利き、季節トレンドの読み方——まるで店舗オーナーが身につけるようなノウハウを、一緒に歩みながらお伝えしていきます。</p>
+
+      <div class="reward-features">
+        <div class="reward-feat">
+          <div class="rf-icon">⚖️</div>
+          <div>
+            <div class="rf-label">kg単価500円で直接仕入れ</div>
+            <div class="rf-text">仕分け済みの商品をkg単価500円で直接仕入れ可能。1kgあたり平均6〜8点の商品が含まれます。</div>
+          </div>
+        </div>
+        <div class="reward-feat">
+          <div class="rf-icon">🆓</div>
+          <div>
+            <div class="rf-label">販売方法・価格・タイミングはすべて自由</div>
+            <div class="rf-text">どのプラットフォームで、いくらで、いつ売るかはすべてあなたが決められます。</div>
+          </div>
+        </div>
+        <div class="reward-feat">
+          <div class="rf-icon">💯</div>
+          <div>
+            <div class="rf-label">利益は100%あなたのもの</div>
+            <div class="rf-text">仕入れ代金以外の費用はなし。売り上げた利益はすべて手元に残ります。</div>
+          </div>
+        </div>
+      </div>
+      <p class="reward-note">※ 仕分け済み・検品済みの商品をお渡しします ／ 仕入れ量・タイミングはご相談ください ／ 商品構成により内容は変動します</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 6: 続けられる理由
+════════════════════════════════════ -->
+<section class="section" id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow">WHY IT WORKS</div>
+    <h2 class="section-title">なぜ続けられるのか。<br>正直にお話しします。</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="w-icon">⏰</div>
+        <h3>時間の自由</h3>
+        <p>出勤・シフト・締め切りなし。「今日は出品しよう」と思ったときに動けばいい。家事や育児の合間でも十分続けられます。</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">📊</div>
+        <h3>透明な分配の仕組み</h3>
+        <p>「いくらもらえるか分からない」を無くすため、純利益に基づいた明確な分配ルールを採用。毎月の計算結果は、ご自身でいつでもご確認いただけます。</p>
+      </div>
+      <div class="why-card">
+        <div class="w-icon">🤝</div>
+        <h3>万全のサポート体制</h3>
+        <p>導入から運用まで完全伴走。最初だけではなく、つまずいたらいつでも相談できます。画面の前で一人で悩む必要はありません。</p>
+      </div>
+    </div>
+
+    <!-- 正直メッセージ -->
+    <div style="background:linear-gradient(135deg,#5C4A3A,#786150);border-left:4px solid #F5A623;border-radius:0 14px 14px 0;padding:20px 22px;margin-top:30px;color:#F1F5F9;">
+      <p style="font-weight:700;color:#FDE68A;margin-bottom:6px;">正直にお伝えします。</p>
+      <p style="font-size:0.93rem;line-height:1.8;opacity:0.9;">
+        これは楽して稼げるモデルではありません。毎日コツコツ出品し続けることが求められます。<br>
+        ただ、それができる方にとっては、<strong style="color:#FDE68A;">在庫リスクなし・赤字リスクなし</strong>という強みを活かして、着実に副収入を積み上げられる仕組みです。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SECTION 7: FAQ
+════════════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title">不安を解消してから、始めましょう。</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">フリマアプリの経験がなくても大丈夫ですか？</div>
+        <div class="faq-a">大丈夫です。出品のコツをお伝えし、商品管理は専用アプリで簡単に行えます。最初の30点は一緒に進め方を確認しながら進めます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どんな商品が届きますか？</div>
+        <div class="faq-a">Tシャツ・パーカー・ジーンズ・ジャケット・コートなど様々なアイテムがランダムに入っています。仕分け・検品は会社で行いますので、使える商品のみお渡しします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">1日何時間くらい必要ですか？</div>
+        <div class="faq-a">慣れれば2〜3時間で10点出品できます。まとまった時間が取れない方は、1日2〜3点ずつでも問題ありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ノルマや義務はありますか？</div>
+        <div class="faq-a">ありません。ただし長期間動きのない場合はご連絡することがあります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">商品が売れなかった場合は？</div>
+        <div class="faq-a">値下げやまとめ売りでの対応をご案内します。完全に売れない場合の対応も会社がサポートします。赤字になるリスクはありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">最初にかかる費用はありますか？</div>
+        <div class="faq-a">商品代金は不要です（会社負担）。発送用の梱包材だけご用意いただければ始められます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どのくらいの場所が必要ですか？（在庫を置くスペース）</div>
+        <div class="faq-a">商品は段ボール箱や衣装ケースで保管していただく形になります。始めたばかりの頃は1〜3ケースほどなので、大きなスペースは必要ありません。販売量が増えて「完全自由販売」の段階になると、衣装ケースで10〜15ケースほどの保管場所があると安心です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">価格設定はどうやって決めるのですか？</div>
+        <div class="faq-a">販売する媒体（メルカリなど）で同じような商品を直接検索したり、AI検索でブランドや相場を調べたりして確認できます。そうして調べた相場をもとに価格を決めていただく形なので、初めての方でも迷いません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">商品の状態が知りたいです</div>
+        <div class="faq-a">一番分かりやすいのは、倉庫へ直接見にお越しいただく方法です。実際の商品を手に取ってご確認いただけますので、大阪近郊の方はぜひ一度お立ち寄りください。もちろん、検品・仕分けを済ませた販売できる状態の商品をお渡ししていますので、ご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">締め日・支払い日はいつですか？</div>
+        <div class="faq-a">毎月、月初から月末までで締め、お支払いは翌月10日に行います。専用アプリから請求書を依頼するだけで、PayPayでの受け取りにも対応しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">梱包材はどこで仕入れますか？</div>
+        <div class="faq-a">主な梱包材は、ダイソーやセリアなどの100円ショップで手軽に揃えられます。おすすめの梱包材もご案内しますので、最小限のコストで始められます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">続けられなくなった場合、手元の商品はどうなりますか？</div>
+        <div class="faq-a">手元に残った商品は、会社へ送り返していただければ問題ありません（送料のみご負担をお願いしています）。無理に売り切る必要はありませんので、ご安心ください。</div>
+      </div>
+    </div>
+
+    <!-- Mid-page CTA 3 -->
+    <div class="mid-cta" style="margin-top:32px">
+      <p>他にも気になることがあれば、<strong>お気軽にご質問ください。</strong>答えられることはすべてお伝えします。</p>
+      <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">質問してみる →</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     NUDGE (フッター前のひと押し)
+════════════════════════════════════ -->
+<div class="nudge">
+  <div style="max-width:600px;margin:0 auto;">
+    <h2>「どうせ続かないかも」と<br>思っているあなたへ</h2>
+    <p>
+      最初の30点を出品してみてください。<br>
+      売れた瞬間の感覚が、きっと変わります。<br>
+      コツコツが報われる仕事を、一緒に始めましょう。
+    </p>
+    <button class="btn-cta-nudge" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      まずは無料で相談してみる
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     FINAL CTA
+════════════════════════════════════ -->
+<section class="cta-final" id="contact">
+  <div style="max-width:620px;margin:0 auto;">
+    <h2>まずは話を聞くだけでも、<br>大歓迎です。</h2>
+    <p class="cta-copy">
+      「向いているかな」「自分にできるかな」<br>
+      そんな不安はよくあります。まずはお気軽にお問い合わせください。
+    </p>
+    <p class="no-pressure">強引な勧誘は一切しておりません。</p>
+
+    <div class="cta-buttons-row">
+      <button class="btn-cta-main" onclick="window.location.href='tel:0665616102'">
+        まずは無料で相談してみる
+      </button>
+      <button class="btn-cta-talk" onclick="window.location.href='tel:0665616102'">
+        💬 まず話だけ聞く（無料・約15分）
+      </button>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="c-label">TEL</div>
+        <div class="c-val"><a href="tel:0665616102" style="color:#FDE68A;">06-6561-6102</a></div>
+        <div class="c-sub">受付時間：平日10:00〜18:00</div>
+      </div>
+      <div class="contact-item">
+        <div class="c-label">MAIL / LINE</div>
+        <div class="c-val" style="color:#93C5FD;">お問い合わせフォーム</div>
+        <div class="c-sub">LINEでの相談も可</div>
+      </div>
+    </div>
+
+    <p class="company-info">
+      株式会社タキオン<br>
+      〒557-0002 大阪市西成区南津守４−１−61
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  © 株式会社タキオン｜古着販売パートナー募集ページ
+</footer>
+
+</body>
+</html>
