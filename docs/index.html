@@ -17,13 +17,21 @@
       --bg:      #FAFAF7;
       --white:   #FFFFFF;
       --text:    #333333;
-      --gray:    #6B7280;
+      --gray:    #5C5650;
       --lightgray: #F3F4F6;
       --border:  #E5E7EB;
       --radius:  14px;
       --shadow:  0 4px 20px rgba(0,0,0,0.07);
     }
     html { scroll-behavior: smooth; }
+    body { line-break: strict; }
+    /* 句読点・てにをは単位で改行させるための句単位ラップ（句の途中で改行しない） */
+    .ph { white-space: nowrap; }
+    .ph-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     body {
       font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
       color: var(--text);
@@ -60,8 +68,8 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      border: 1.5px solid var(--amber);
-      color: var(--amber);
+      border: 1.5px solid var(--amber-d);
+      color: #B45309;
       border-radius: 999px;
       padding: 7px 14px;
       font-size: 0.82rem;
@@ -69,10 +77,10 @@
       transition: all 0.15s;
       white-space: nowrap;
     }
-    .btn-tel:hover { background: var(--amber); color: #fff; text-decoration: none; }
+    .btn-tel:hover { background: var(--amber); color: #1C1917; text-decoration: none; }
     .btn-cta-sm {
       background: var(--amber);
-      color: #fff;
+      color: #1C1917;
       border-radius: 999px;
       padding: 8px 18px;
       font-size: 0.85rem;
@@ -87,10 +95,17 @@
     /* スマホ限定の改行 */
     .br-sp { display: none; }
 
-    /* ─── Hero ─── */
+    /* ─── Hero: page 1（最初に見える部分） ─── */
+    .hero-top {
+      background: #FFFBEB;
+      padding: 56px 20px 40px;
+      text-align: center;
+    }
+
+    /* ─── Hero: page 2 ─── */
     .hero {
       background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 40%, #FCD34D 100%);
-      padding: 64px 20px 52px;
+      padding: 40px 20px 52px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -136,11 +151,53 @@
       display: block;
       font-size: clamp(2.2rem, 6vw, 3.4rem);
     }
+    .hero-main-title {
+      font-size: clamp(1.7rem, 6.2vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.35;
+      color: #1C1917;
+      letter-spacing: 0.02em;
+      margin-bottom: 2px;
+      gap: 0 0.05em;
+    }
+    .hero-main-title2 {
+      font-size: clamp(1.7rem, 6.2vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.35;
+      color: #B45309;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      gap: 0 0.05em;
+    }
+    .hero-sub-sm {
+      font-size: clamp(0.78rem, 2.2vw, 0.95rem);
+      font-weight: 600;
+      color: #57534E;
+      margin-bottom: 0;
+      line-height: 1.8;
+      gap: 0 0.15em;
+    }
+    .hero-heading2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      color: #1C1917;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      margin: 6px 0 26px;
+      gap: 0 0.15em;
+    }
     .hero-sub {
       font-size: 1.05rem;
       color: #44403C;
       margin-bottom: 24px;
       line-height: 1.7;
+    }
+    .hero-lead2 {
+      font-size: clamp(0.85rem, 2.4vw, 1.05rem);
+      font-weight: 700;
+      color: #92400E;
+      margin-bottom: 16px;
+      gap: 0 0.1em;
     }
     .hero-features {
       display: flex;
@@ -158,10 +215,27 @@
       color: #44403C;
       border: 1px solid rgba(255,255,255,0.9);
     }
+    .hero-feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: clamp(8px, 2vw, 14px);
+      margin-bottom: 28px;
+    }
+    .hero-feat-card {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.85);
+      border-radius: var(--radius);
+      padding: clamp(14px, 3vw, 20px) clamp(10px, 2.5vw, 14px);
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+    .hero-feat-card .hf-icon { font-size: clamp(1.4rem, 3.5vw, 1.8rem); margin-bottom: 8px; }
+    .hero-feat-card h3 { font-size: clamp(0.82rem, 2.1vw, 0.95rem); font-weight: 700; color: #1C1917; margin-bottom: 6px; line-height: 1.5; min-height: 3em; display: flex; align-items: center; justify-content: center; gap: 0 0.1em; }
+    .hero-feat-card p { font-size: clamp(0.7rem, 1.9vw, 0.8rem); color: #57534E; line-height: 1.7; gap: 0 0.1em; }
     .btn-cta-hero {
       display: inline-block;
       background: var(--amber);
-      color: #fff;
+      color: #1C1917;
       font-weight: 800;
       font-size: 1.1rem;
       border-radius: 999px;
@@ -172,8 +246,8 @@
       cursor: pointer;
       letter-spacing: 0.03em;
     }
-    .btn-cta-hero:hover { background: var(--amber-d); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,166,35,0.5); text-decoration: none; color: #fff; }
-    .hero-note { font-size: 0.8rem; color: #78716C; margin-top: 10px; }
+    .btn-cta-hero:hover { background: var(--amber-d); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,166,35,0.5); text-decoration: none; color: #1C1917; }
+    .hero-note { font-size: clamp(0.72rem, 1.8vw, 0.8rem); color: #5C4A3A; margin-top: 10px; line-height: 1.7; gap: 0 0.1em; }
 
     /* ─── Trust Belt ─── */
     .trust-belt {
@@ -209,7 +283,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--amber);
+      color: #B45309;
       margin-bottom: 8px;
     }
     .section-title {
@@ -254,14 +328,19 @@
     }
     .target-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
     .target-card .t-quote {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #FFFBEB;
-      border-left: 3px solid var(--amber);
-      border-radius: 0 8px 8px 0;
-      font-size: 0.82rem;
-      color: #78716C;
-      font-style: italic;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .target-card .t-quote span {
+      background: #FEF3C7;
+      border: 1px solid rgba(245,166,35,0.35);
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #92400E;
     }
 
     /* ─── Steps ─── */
@@ -301,7 +380,7 @@
       justify-content: center;
       padding: 0 12px;
       padding-top: 50px;
-      color: var(--amber);
+      color: var(--amber-d);
       font-size: 1.8rem;
     }
 
@@ -353,7 +432,7 @@
       text-align: center;
     }
     .sim-earn-box .earn-label { font-size: 0.75rem; color: var(--gray); }
-    .sim-earn-box .earn-num { font-size: 1.6rem; font-weight: 800; color: var(--amber); line-height: 1.2; }
+    .sim-earn-box .earn-num { font-size: 1.6rem; font-weight: 800; color: #B45309; line-height: 1.2; }
     .sim-earn-box .earn-sub { font-size: 0.75rem; color: var(--gray); }
     .sim-card.premium .sim-earn-box { background: #EFF6FF; }
     .sim-card.premium .sim-earn-box .earn-num { color: var(--blue); }
@@ -507,7 +586,7 @@
     /* ─── Why section ─── */
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
     .why-card {
@@ -537,7 +616,7 @@
       display: flex;
       gap: 10px;
     }
-    .faq-q::before { content: "Q"; color: var(--amber); font-weight: 800; flex-shrink: 0; }
+    .faq-q::before { content: "Q"; color: #B45309; font-weight: 800; flex-shrink: 0; }
     .faq-a {
       font-size: 0.9rem;
       color: var(--gray);
@@ -554,11 +633,11 @@
     .nudge h2 {
       font-size: clamp(1.4rem, 3.5vw, 1.9rem);
       font-weight: 800;
-      color: #fff;
+      color: #1C1917;
       margin-bottom: 14px;
       line-height: 1.4;
     }
-    .nudge p { font-size: 0.97rem; color: rgba(255,255,255,0.88); max-width: 500px; margin: 0 auto 24px; line-height: 1.8; }
+    .nudge p { font-size: 0.97rem; color: rgba(28,25,23,0.78); max-width: 500px; margin: 0 auto 24px; line-height: 1.8; }
     .btn-cta-nudge {
       display: inline-block;
       background: #fff;
@@ -598,7 +677,7 @@
     }
     .btn-cta-main {
       background: var(--amber);
-      color: #fff;
+      color: #1C1917;
       font-weight: 800;
       font-size: 1.05rem;
       border-radius: 999px;
@@ -655,11 +734,11 @@
       gap: 14px;
       margin: 40px 0 0;
     }
-    .mid-cta p { font-size: 0.9rem; color: #78716C; margin: 0; }
+    .mid-cta p { font-size: 0.9rem; color: #57534E; margin: 0; }
     .mid-cta strong { color: #92400E; }
     .btn-mid-cta {
       background: var(--amber);
-      color: #fff;
+      color: #1C1917;
       font-weight: 700;
       font-size: 0.9rem;
       border-radius: 999px;
@@ -785,7 +864,7 @@
 <header class="site-header">
   <div class="logo">
     株式会社<span>タキオン</span><br>
-    <span style="font-size:0.7rem;font-weight:600;color:#6B7280;letter-spacing:0.04em;">古着販売パートナー募集</span>
+    <span style="font-size:0.7rem;font-weight:600;color:#5C5650;letter-spacing:0.04em;">古着販売パートナー募集</span>
   </div>
   <div class="header-actions">
     <a href="tel:0665616102" class="btn-tel">📞 <span>06-6561-6102</span></a>
@@ -797,29 +876,46 @@
 <!-- ═══════════════════════════════════
      HERO
 ════════════════════════════════════ -->
+<section class="hero-top">
+  <div class="hero-inner">
+    <h1 class="hero-main-title ph-wrap"><span class="ph">古着販売</span><span class="ph">パートナー募集</span></h1>
+    <p class="hero-main-title2 ph-wrap"><span class="ph">メルカリ</span><span class="ph">販売者募集</span></p>
+    <p class="hero-sub-sm ph-wrap"><span class="ph">古着をメルカリで販売するだけ。</span><span class="ph">スマホがあれば、</span><span class="ph">誰でも始められます。</span></p>
+  </div>
+</section>
+
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">📣 メルカリ古着販売パートナー募集</div>
-    <p class="hero-kicker">会社が仕入れた古着を、メルカリ等で<br class="br-sp"><strong>代理出品・販売</strong>していただくお仕事です。</p>
-    <h1>
-      未経験でも、誰でも。<br>
-      自分のペースで、
-      <em>着実に収入を育てる。</em>
-    </h1>
-    <p class="hero-sub">
-      古着をメルカリで販売するだけ。<br>
-      スマホがあれば、今日から始められます。
-    </p>
-    <div class="hero-features">
-      <span class="hero-feat">📦 商品は会社が仕入れてお届け</span>
-      <span class="hero-feat">📱 販売はメルカリ・ヤフオクで</span>
-      <span class="hero-feat">🏠 自宅・好きな時間帯でOK</span>
-      <span class="hero-feat">💰 仕入れ費用ゼロ</span>
+    <h2 class="hero-heading2 ph-wrap"><span class="ph">未経験でも、</span><span class="ph">誰でも。</span><span class="ph">自分のペースで、</span><span class="ph">着実に収入を育てる。</span></h2>
+
+    <p class="hero-lead2 ph-wrap"><span class="ph">未経験でも安心して</span><span class="ph">無理なく始められる</span><span class="ph">4つの理由</span></p>
+    <div class="hero-feat-grid">
+      <div class="hero-feat-card">
+        <div class="hf-icon">📱</div>
+        <h3 class="ph-wrap"><span class="ph">販売は</span><span class="ph">メルカリ・ヤフオクで</span></h3>
+        <p class="ph-wrap"><span class="ph">使い慣れたフリマアプリに、</span><span class="ph">そのまま出品するだけです。</span></p>
+      </div>
+      <div class="hero-feat-card">
+        <div class="hf-icon">🏠</div>
+        <h3 class="ph-wrap"><span class="ph">自宅・</span><span class="ph">好きな時間帯でOK</span></h3>
+        <p class="ph-wrap"><span class="ph">すきま時間に、</span><span class="ph">自分のペースで進められます。</span></p>
+      </div>
+      <div class="hero-feat-card">
+        <div class="hf-icon">💰</div>
+        <h3 class="ph-wrap"><span class="ph">仕入れ費用ゼロ</span></h3>
+        <p class="ph-wrap"><span class="ph">商品は会社が用意するので</span><span class="ph">持ち出しはありません。</span></p>
+      </div>
+      <div class="hero-feat-card">
+        <div class="hf-icon">🔍</div>
+        <h3 class="ph-wrap"><span class="ph">実物を見ながら</span><span class="ph">選べる</span></h3>
+        <p class="ph-wrap"><span class="ph">商品は実物を見ながら</span><span class="ph">選んでいただけます。</span></p>
+      </div>
     </div>
+
     <button class="btn-cta-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       無料で詳しく話を聞く
     </button>
-    <p class="hero-note">強引な勧誘は一切しておりません。お問い合わせだけでもOKです。</p>
+    <p class="hero-note ph-wrap"><span class="ph">強引な勧誘は一切しておりません。</span><span class="ph">お問い合わせだけでもOKです。</span></p>
   </div>
 </section>
 
@@ -838,7 +934,7 @@
 <section class="twopath">
   <div class="twopath-inner">
     <div style="text-align:center;margin-bottom:4px">
-      <span class="section-eyebrow">YOUR STARTING POINT</span>
+      <span class="section-eyebrow">スタートの選び方</span>
     </div>
     <h2 class="section-title" style="text-align:center;margin-bottom:4px">あなたの経験に合わせて、<br>スタートが選べます</h2>
     <p style="text-align:center;font-size:0.92rem;color:var(--gray);max-width:520px;margin:0 auto 0">どちらのスタートでも、ご相談はいつでも歓迎です。</p>
@@ -880,7 +976,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="target">
   <div class="section-inner">
-    <div class="section-eyebrow">WHO IS THIS FOR</div>
+    <div class="section-eyebrow">こんな方におすすめ</div>
     <h2 class="section-title">こんな方、一緒にやりませんか？</h2>
     <p class="section-lead">「派手に稼ぐより、コツコツ積み上げることが好きな方」に特に向いています。</p>
 
@@ -889,25 +985,25 @@
         <div class="t-icon">😊</div>
         <h3>子育てが一段落した<br>お母さん</h3>
         <p>「子どもが少し手を離れて、自分の時間が持てるようになった」そんなタイミングに、無理なく始められる仕事です。</p>
-        <div class="t-quote">「自分のペースで」「家でできる」</div>
+        <div class="t-quote"><span>自分のペースで</span><span>家でできる</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">💼</div>
         <h3>副業を探している<br>会社員</h3>
         <p>毎月決まった時間が取れなくても大丈夫。売りたいときに出品、それだけでOKです。</p>
-        <div class="t-quote">「週末だけでも可」「自分のペースで」</div>
+        <div class="t-quote"><span>週末だけでも可</span><span>自分のペースで</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">🏠</div>
         <h3>在宅でできる<br>仕事を探している方</h3>
         <p>外出や対面接客は一切ありません。自宅で、スマホで、マイペースに進められます。</p>
-        <div class="t-quote">「時間の制約なし」「頑張った分だけ返ってくる」</div>
+        <div class="t-quote"><span>時間の制約なし</span><span>頑張った分だけ返ってくる</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">📦</div>
         <h3>メルカリが<br>好き・得意な方</h3>
         <p>すでにフリマアプリを使っている方なら、そのスキルをそのまま活かせます。シニアの方も歓迎。</p>
-        <div class="t-quote">「スマホひとつで」「無理なく続けられる」</div>
+        <div class="t-quote"><span>スマホひとつで</span><span>無理なく続けられる</span></div>
       </div>
     </div>
   </div>
@@ -919,7 +1015,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="how">
   <div class="section-inner">
-    <div class="section-eyebrow">HOW IT WORKS</div>
+    <div class="section-eyebrow">始め方の流れ</div>
     <h2 class="section-title">やることは、たったの3ステップ</h2>
     <p class="section-lead">難しいことは何もありません。<br>商品を受け取ったら、撮影・出品、発送するだけのお仕事です。</p>
 
@@ -962,7 +1058,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="simulation">
   <div class="section-inner">
-    <div class="section-eyebrow">INCOME SIMULATION</div>
+    <div class="section-eyebrow">収入シミュレーション</div>
     <h2 class="section-title">実際いくら稼げるの？<br>正直に公開します。</h2>
     <p class="section-lead">頑張った分だけ、きちんと返ってきます。<br>難しいことは抜きにして、正直な数字を見てください。</p>
 
@@ -1041,7 +1137,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="distribution">
   <div class="section-inner">
-    <div class="section-eyebrow">REVENUE SHARE</div>
+    <div class="section-eyebrow">報酬分配の仕組み</div>
     <h2 class="section-title">積み上げるほど、報酬が増える。<br>シンプルな成果連動制。</h2>
     <p class="section-lead">ノルマはありません。これまでの実績が積み上がるほど、あなたの成果報酬の割合が上がっていきます。</p>
 
@@ -1101,7 +1197,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="special">
   <div class="section-inner">
-    <div class="section-eyebrow">SPECIAL PROGRAM</div>
+    <div class="section-eyebrow">特別プログラム</div>
     <h2 class="section-title">さらに上を目指したい方へ</h2>
 
     <div class="reward-box">
@@ -1143,7 +1239,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="why">
   <div class="section-inner">
-    <div class="section-eyebrow">WHY IT WORKS</div>
+    <div class="section-eyebrow">続けられる理由</div>
     <h2 class="section-title">なぜ続けられるのか。<br>正直にお話しします。</h2>
 
     <div class="why-grid">
@@ -1162,11 +1258,16 @@
         <h3>万全のサポート体制</h3>
         <p>導入から運用まで完全伴走。最初だけではなく、つまずいたらいつでも相談できます。画面の前で一人で悩む必要はありません。</p>
       </div>
+      <div class="why-card">
+        <div class="w-icon">🛡️</div>
+        <h3>在庫・赤字リスクなし</h3>
+        <p>商品はすべて会社が用意するので、売れ残っても自己負担はありません。リスクを抱えずに挑戦できます。</p>
+      </div>
     </div>
 
     <!-- 正直メッセージ -->
-    <div style="background:linear-gradient(135deg,#5C4A3A,#786150);border-left:4px solid #F5A623;border-radius:0 14px 14px 0;padding:20px 22px;margin-top:30px;color:#F1F5F9;">
-      <p style="font-weight:700;color:#FDE68A;margin-bottom:6px;">正直にお伝えします。</p>
+    <div style="background:linear-gradient(135deg,#5C4A3A,#786150);border-radius:20px;padding:26px 24px 22px;margin-top:30px;color:#F1F5F9;box-shadow:0 12px 32px rgba(60,45,30,0.25);">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(253,230,138,0.15);border:1px solid rgba(253,230,138,0.4);border-radius:999px;padding:4px 14px;font-size:0.78rem;font-weight:700;color:#FDE68A;letter-spacing:0.04em;margin-bottom:14px;">💬 本音でお伝えします</span>
       <p style="font-size:0.93rem;line-height:1.8;opacity:0.9;">
         これは楽して稼げるモデルではありません。毎日コツコツ出品し続けることが求められます。<br>
         ただ、それができる方にとっては、<strong style="color:#FDE68A;">在庫リスクなし・赤字リスクなし</strong>という強みを活かして、着実に副収入を積み上げられる仕組みです。
@@ -1181,7 +1282,7 @@
 ════════════════════════════════════ -->
 <section class="section" id="faq">
   <div class="section-inner">
-    <div class="section-eyebrow">FAQ</div>
+    <div class="section-eyebrow">よくある質問</div>
     <h2 class="section-title">不安を解消してから、始めましょう。</h2>
 
     <div class="faq-list">
