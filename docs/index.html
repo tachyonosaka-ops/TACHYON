@@ -27,6 +27,8 @@
     body { line-break: strict; }
     /* 句読点・てにをは単位で改行させるための句単位ラップ（句の途中で改行しない） */
     .ph { white-space: nowrap; }
+    /* flexラップ内で強制的に改行させたい箇所に付与（<br>はflexコンテナ内で効かないため） */
+    .ph-break-after { flex-basis: 100%; }
     .ph-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -577,7 +579,9 @@
     .twopath-card.expert   { border-color: #93C5FD; }
     .twopath-card .tp-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .twopath-card .tp-icon { font-size: 2rem; }
-    .twopath-card .tp-plan-name { font-size: 1.05rem; font-weight: 800; color: #1C1917; }
+    .twopath-card .tp-plan-name { font-size: 1.3rem; font-weight: 800; }
+    .twopath-card.beginner .tp-plan-name { color: #B45309; }
+    .twopath-card.expert .tp-plan-name { color: #1D4ED8; }
     .twopath-card .tp-tag {
       display: inline-block;
       font-size: 0.72rem;
@@ -1152,7 +1156,7 @@
   <div class="section-inner">
     <div class="section-eyebrow">報酬分配の仕組み</div>
     <h2 class="section-title ph-wrap-left"><span class="ph">積み上げるほど</span><span class="ph">報酬が増える。</span><span class="ph">シンプルな成果連動制。</span></h2>
-    <p class="section-lead ph-wrap-left"><span class="ph"><strong>ノルマはありません。</strong></span><br><span class="ph">これまでの実績が積み上がるほど</span><span class="ph">あなたの成果報酬の割合が</span><span class="ph">上がっていきます。</span></p>
+    <p class="section-lead ph-wrap-left"><span class="ph ph-break-after"><strong>ノルマはありません。</strong></span><span class="ph">これまでの実績が積み上がるほど</span><span class="ph">あなたの成果報酬の割合が</span><span class="ph">上がっていきます。</span></p>
 
     <table class="dist-table">
       <thead>
@@ -1192,12 +1196,12 @@
 
     <div class="dist-pin">
       <span>📌</span>
-      <span class="ph-wrap-left"><span class="ph"><strong>毎月リセットされません。</strong></span><br><span class="ph">締めは毎月行いますが</span><span class="ph">成果はゼロに戻らず</span><span class="ph">累計で積み上がります。</span><span class="ph">これまでの累計が増えるほど</span><span class="ph">成果報酬のステージが</span><span class="ph">上がっていく仕組みです。</span></span>
+      <span class="ph-wrap-left"><span class="ph ph-break-after"><strong>毎月リセットされません。</strong></span><span class="ph">締めは毎月行いますが</span><span class="ph">成果はゼロに戻らず</span><span class="ph">累計で積み上がります。</span><span class="ph">これまでの累計が増えるほど</span><span class="ph">成果報酬のステージが</span><span class="ph">上がっていく仕組みです。</span></span>
     </div>
 
     <div class="dist-pin dist-pin--gold">
       <span>🎓</span>
-      <span class="ph-wrap-left"><span class="ph"><strong>累計15万円に到達したら</strong></span><span class="ph"><strong>ひとつの区切り。</strong></span><br><span class="ph">ここまで積み上げた頃には</span><span class="ph">商品の目利き・</span><span class="ph">値付け・</span><span class="ph">売れ筋の見極めなど</span><span class="ph">ひと通りのスキルが</span><span class="ph">身についています。</span><span class="ph">その実力をもって</span><span class="ph">自分で仕入れて自由に売る</span><span class="ph"><strong>「完全自由販売」へ移行</strong>できます</span><span class="ph">（もちろん、</span><span class="ph">そのままのプランで</span><span class="ph">続けても</span><span class="ph">OKです）。</span></span>
+      <span class="ph-wrap-left"><span class="ph"><strong>累計15万円に到達したら</strong></span><span class="ph ph-break-after"><strong>ひとつの区切り。</strong></span><span class="ph">ここまで積み上げた頃には</span><span class="ph">商品の目利き・</span><span class="ph">値付け・</span><span class="ph">売れ筋の見極めなど</span><span class="ph">ひと通りのスキルが</span><span class="ph">身についています。</span><span class="ph">その実力をもって</span><span class="ph">自分で仕入れて自由に売る</span><span class="ph"><strong>「完全自由販売」へ移行</strong>できます</span><span class="ph">（もちろん、</span><span class="ph">そのままのプランで</span><span class="ph">続けても</span><span class="ph">OKです）。</span></span>
     </div>
 
     <p class="note ph-wrap-left" style="margin-top:12px"><span class="ph">※ 純利益 ＝</span><span class="ph">販売価格 − 販売手数料</span><span class="ph">− 送料 − 梱包費。</span><span class="ph">費用が確定したあとに算出します。</span><span class="ph">月ごとに締めるのは</span><span class="ph">集計のタイミングを区切るためで</span><span class="ph">成果そのものは累計で評価します。</span></p>
