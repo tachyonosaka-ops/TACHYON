@@ -31,6 +31,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      min-width: 0;
+    }
+    .ph-wrap-left {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      text-align: left;
+      min-width: 0;
     }
     body {
       font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
@@ -326,7 +334,7 @@
       text-wrap: balance;
       min-height: 2.9em;
     }
-    .target-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    .target-card p { font-size: clamp(0.74rem, 1.7vw, 0.85rem); color: var(--gray); line-height: 1.7; }
     .target-card .t-quote {
       display: flex;
       flex-wrap: wrap;
@@ -417,6 +425,7 @@
     }
     .sim-card.featured .sim-badge { background: #FEF3C7; color: #92400E; }
     .sim-card.premium .sim-badge { background: #EFF6FF; color: #1E40AF; }
+    .sim-card.entry .sim-badge { background: #ECFDF5; color: #15803D; }
     .sim-icon { font-size: 2rem; margin-bottom: 8px; }
     .sim-level { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gray); text-transform: uppercase; margin-bottom: 4px; }
     .sim-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; color: #1C1917; }
@@ -566,7 +575,9 @@
     }
     .twopath-card.beginner { border-color: #FCD34D; }
     .twopath-card.expert   { border-color: #93C5FD; }
-    .twopath-card .tp-icon { font-size: 2rem; margin-bottom: 10px; }
+    .twopath-card .tp-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .twopath-card .tp-icon { font-size: 2rem; }
+    .twopath-card .tp-plan-name { font-size: 1.05rem; font-weight: 800; color: #1C1917; }
     .twopath-card .tp-tag {
       display: inline-block;
       font-size: 0.72rem;
@@ -880,30 +891,30 @@
   <div class="hero-inner">
     <h1 class="hero-main-title ph-wrap"><span class="ph">古着販売</span><span class="ph">パートナー募集</span></h1>
     <p class="hero-main-title2 ph-wrap"><span class="ph">メルカリ</span><span class="ph">販売者募集</span></p>
-    <p class="hero-sub-sm ph-wrap"><span class="ph">古着をメルカリで販売するだけ。</span><span class="ph">スマホがあれば、</span><span class="ph">誰でも始められます。</span></p>
+    <p class="hero-sub-sm ph-wrap"><span class="ph">古着をメルカリで販売するだけ。</span><br class="br-sp"><span class="ph">スマホがあれば、誰でも始められます。</span></p>
   </div>
 </section>
 
 <section class="hero">
   <div class="hero-inner">
-    <h2 class="hero-heading2 ph-wrap"><span class="ph">未経験でも、</span><span class="ph">誰でも。</span><span class="ph">自分のペースで、</span><span class="ph">着実に収入を育てる。</span></h2>
+    <h2 class="hero-heading2 ph-wrap"><span class="ph">未経験でも、</span><span class="ph">誰でも。</span><span class="ph">自分のペースで</span><span class="ph">着実に収入を育てる。</span></h2>
 
     <p class="hero-lead2 ph-wrap"><span class="ph">未経験でも安心して</span><span class="ph">無理なく始められる</span><span class="ph">4つの理由</span></p>
     <div class="hero-feat-grid">
       <div class="hero-feat-card">
         <div class="hf-icon">📱</div>
-        <h3 class="ph-wrap"><span class="ph">販売は</span><span class="ph">メルカリ・ヤフオクで</span></h3>
-        <p class="ph-wrap"><span class="ph">使い慣れたフリマアプリに、</span><span class="ph">そのまま出品するだけです。</span></p>
+        <h3 class="ph-wrap"><span class="ph">販売は</span><span class="ph">メルカリ・</span><span class="ph">ヤフオクで</span></h3>
+        <p class="ph-wrap"><span class="ph">使い慣れた</span><span class="ph">フリマアプリに</span><span class="ph">そのまま</span><span class="ph">出品するだけです。</span></p>
       </div>
       <div class="hero-feat-card">
         <div class="hf-icon">🏠</div>
         <h3 class="ph-wrap"><span class="ph">自宅・</span><span class="ph">好きな時間帯でOK</span></h3>
-        <p class="ph-wrap"><span class="ph">すきま時間に、</span><span class="ph">自分のペースで進められます。</span></p>
+        <p class="ph-wrap"><span class="ph">すきま時間に</span><span class="ph">自分の</span><span class="ph">ペースで</span><span class="ph">進められます。</span></p>
       </div>
       <div class="hero-feat-card">
         <div class="hf-icon">💰</div>
         <h3 class="ph-wrap"><span class="ph">仕入れ費用ゼロ</span></h3>
-        <p class="ph-wrap"><span class="ph">商品は会社が用意するので</span><span class="ph">持ち出しはありません。</span></p>
+        <p class="ph-wrap"><span class="ph">商品は会社が</span><span class="ph">用意するので</span><span class="ph">持ち出しはありません。</span></p>
       </div>
       <div class="hero-feat-card">
         <div class="hf-icon">🔍</div>
@@ -915,7 +926,7 @@
     <button class="btn-cta-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       無料で詳しく話を聞く
     </button>
-    <p class="hero-note ph-wrap"><span class="ph">強引な勧誘は一切しておりません。</span><span class="ph">お問い合わせだけでもOKです。</span></p>
+    <p class="hero-note ph-wrap"><span class="ph">強引な勧誘は一切しておりません。</span><br class="br-sp"><span class="ph">お問い合わせだけでもOKです。</span></p>
   </div>
 </section>
 
@@ -936,33 +947,33 @@
     <div style="text-align:center;margin-bottom:4px">
       <span class="section-eyebrow">スタートの選び方</span>
     </div>
-    <h2 class="section-title" style="text-align:center;margin-bottom:4px">あなたの経験に合わせて、<br>スタートが選べます</h2>
-    <p style="text-align:center;font-size:0.92rem;color:var(--gray);max-width:520px;margin:0 auto 0">どちらのスタートでも、ご相談はいつでも歓迎です。</p>
+    <h2 class="section-title ph-wrap" style="text-align:center;margin-bottom:4px"><span class="ph">あなたの経験に合わせて</span><span class="ph">スタートが選べます</span></h2>
+    <p class="ph-wrap" style="text-align:center;font-size:0.92rem;color:var(--gray);max-width:520px;margin:0 auto 0"><span class="ph">どちらのスタートでも</span><span class="ph">ご相談はいつでも歓迎です。</span></p>
     <div class="twopath-grid">
 
       <div class="twopath-card beginner">
-        <div class="tp-icon">🌱</div>
+        <div class="tp-icon-row"><span class="tp-icon">🌱</span><span class="tp-plan-name">サポートプラン</span></div>
         <div class="tp-tag">初めての方・経験が少ない方</div>
-        <h3>まずはパートナープランで<br>安心してスタート</h3>
-        <p>古着販売の経験がなくても大丈夫。仕入れ費用はゼロ、ノルマもなし。分からないことはすぐに聞ける環境を用意しています。売れ筋・写真の撮り方・値付けのコツまで、一緒に歩みながらきっちりお伝えします。迷わず取り組めるのが、このプランの一番の強みです。</p>
+        <h3 class="ph-wrap-left"><span class="ph">まずはサポートプランで</span><span class="ph">安心してスタート</span></h3>
+        <p class="ph-wrap-left"><span class="ph">古着販売の経験がなくても大丈夫。</span><span class="ph">仕入れ費用はゼロ</span><span class="ph">ノルマもなし。</span><span class="ph">分からないことはすぐに聞ける環境を用意しています。</span><span class="ph">売れ筋・写真の撮り方・値付けのコツまで</span><span class="ph">一緒に歩みながらきっちりお伝えします。</span><span class="ph">迷わず取り組めるのが</span><span class="ph">このプランの一番の強みです。</span></p>
         <ul>
-          <li>仕入れ費用ゼロ・リスクなし</li>
-          <li>商品は会社が用意してお届け</li>
-          <li>わからなければすぐ相談できる</li>
-          <li>実力がついたら自由販売へ移行OK</li>
+          <li><span class="ph-wrap-left"><span class="ph">仕入れ費用ゼロ・リスクなし</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">商品は会社が用意して</span><span class="ph">お届け</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">わからなければ</span><span class="ph">すぐ相談できる</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">実力がついたら</span><span class="ph">自由販売へ移行OK</span></span></li>
         </ul>
       </div>
 
       <div class="twopath-card expert">
-        <div class="tp-icon">💼</div>
+        <div class="tp-icon-row"><span class="tp-icon">💼</span><span class="tp-plan-name">自由仕入れプラン</span></div>
         <div class="tp-tag">すでに販売経験がある方</div>
-        <h3>最初から自由仕入れプランで<br>フルスタートも可能</h3>
-        <p>「すでに売り方は分かっている」という方には、最初から直接仕入れ（kg単価買い取り）で始める自由販売プランもご案内できます。売上の100%があなたの利益。自分のペース・自分の判断で動きたい方に向いています。</p>
+        <h3 class="ph-wrap-left"><span class="ph">最初から自由仕入れプランで</span><span class="ph">フルスタートも可能</span></h3>
+        <p class="ph-wrap-left"><span class="ph">「すでに売り方は分かっている」という方には</span><span class="ph">最初から直接仕入れ</span><span class="ph">（kg単価買い取り）で</span><span class="ph">始める自由仕入れプランもご案内できます。</span><span class="ph">売上の100%があなたの利益。</span><span class="ph">自分のペース・</span><span class="ph">自分の判断で</span><span class="ph">動きたい方に向いています。</span></p>
         <ul>
-          <li>仕入れ：kg単価500円で直接買い取り</li>
-          <li>販売プラットフォーム・価格・タイミングは自由</li>
-          <li>売上は100%あなたのもの</li>
-          <li>ご相談の上、判断させていただきます</li>
+          <li><span class="ph-wrap-left"><span class="ph">仕入れ：</span><span class="ph">kg単価500円で直接買い取り</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">販売プラットフォーム・価格・タイミングは自由</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">売上は100%あなたのもの</span></span></li>
+          <li><span class="ph-wrap-left"><span class="ph">ご相談の上</span><span class="ph">判断させていただきます</span></span></li>
         </ul>
       </div>
 
@@ -977,32 +988,32 @@
 <section class="section" id="target">
   <div class="section-inner">
     <div class="section-eyebrow">こんな方におすすめ</div>
-    <h2 class="section-title">こんな方、一緒にやりませんか？</h2>
-    <p class="section-lead">「派手に稼ぐより、コツコツ積み上げることが好きな方」に特に向いています。</p>
+    <h2 class="section-title ph-wrap-left"><span class="ph">こんな方</span><span class="ph">一緒にやりませんか？</span></h2>
+    <p class="section-lead ph-wrap-left"><span class="ph">「派手に稼ぐより</span><span class="ph">コツコツ積み上げることが好きな方」に</span><span class="ph">特に向いています。</span></p>
 
     <div class="target-grid">
       <div class="target-card">
         <div class="t-icon">😊</div>
-        <h3>子育てが一段落した<br>お母さん</h3>
-        <p>「子どもが少し手を離れて、自分の時間が持てるようになった」そんなタイミングに、無理なく始められる仕事です。</p>
+        <h3 class="ph-wrap-left"><span class="ph">子育てが一段落した</span><span class="ph">お母さん</span></h3>
+        <p class="ph-wrap-left"><span class="ph">「子どもが</span><span class="ph">少し手を</span><span class="ph">離れて</span><span class="ph">自分の時間が</span><span class="ph">持てるように</span><span class="ph">なった」</span><span class="ph">そんな</span><span class="ph">タイミングに</span><span class="ph">無理なく</span><span class="ph">始められる</span><span class="ph">仕事です。</span></p>
         <div class="t-quote"><span>自分のペースで</span><span>家でできる</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">💼</div>
-        <h3>副業を探している<br>会社員</h3>
-        <p>毎月決まった時間が取れなくても大丈夫。売りたいときに出品、それだけでOKです。</p>
+        <h3 class="ph-wrap-left"><span class="ph">副業を探している</span><span class="ph">会社員</span></h3>
+        <p class="ph-wrap-left"><span class="ph">毎月決まった</span><span class="ph">時間が</span><span class="ph">取れなくても</span><span class="ph">大丈夫。</span><span class="ph">売りたいときに</span><span class="ph">出品</span><span class="ph">それだけで</span><span class="ph">OKです。</span></p>
         <div class="t-quote"><span>週末だけでも可</span><span>自分のペースで</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">🏠</div>
-        <h3>在宅でできる<br>仕事を探している方</h3>
-        <p>外出や対面接客は一切ありません。自宅で、スマホで、マイペースに進められます。</p>
+        <h3 class="ph-wrap-left"><span class="ph">在宅でできる</span><span class="ph">仕事を探している方</span></h3>
+        <p class="ph-wrap-left"><span class="ph">外出や</span><span class="ph">対面接客は</span><span class="ph">一切ありません。</span><span class="ph">自宅で・</span><span class="ph">スマホで</span><span class="ph">マイペースに</span><span class="ph">進められます。</span></p>
         <div class="t-quote"><span>時間の制約なし</span><span>頑張った分だけ返ってくる</span></div>
       </div>
       <div class="target-card">
         <div class="t-icon">📦</div>
-        <h3>メルカリが<br>好き・得意な方</h3>
-        <p>すでにフリマアプリを使っている方なら、そのスキルをそのまま活かせます。シニアの方も歓迎。</p>
+        <h3 class="ph-wrap-left"><span class="ph">メルカリが</span><span class="ph">好き・得意な方</span></h3>
+        <p class="ph-wrap-left"><span class="ph">すでに</span><span class="ph">フリマアプリを</span><span class="ph">使っている方なら</span><span class="ph">そのスキルを</span><span class="ph">そのまま</span><span class="ph">活かせます。</span><span class="ph">シニアの方も</span><span class="ph">歓迎。</span></p>
         <div class="t-quote"><span>スマホひとつで</span><span>無理なく続けられる</span></div>
       </div>
     </div>
@@ -1016,37 +1027,38 @@
 <section class="section" id="how">
   <div class="section-inner">
     <div class="section-eyebrow">始め方の流れ</div>
-    <h2 class="section-title">やることは、たったの3ステップ</h2>
-    <p class="section-lead">難しいことは何もありません。<br>商品を受け取ったら、撮影・出品、発送するだけのお仕事です。</p>
+    <h2 class="section-title ph-wrap-left"><span class="ph">やることは</span><span class="ph">たったの3ステップ</span></h2>
+    <p class="section-lead ph-wrap-left"><span class="ph">難しいことは何もありません。</span><span class="ph">商品を受け取ったら</span><span class="ph">撮影・出品・発送するだけのお仕事です。</span></p>
 
     <div class="steps-row">
       <div class="step-card">
         <div class="step-num">1</div>
         <div class="step-icon">📦</div>
-        <h3>商品を受け取る</h3>
-        <p>会社が仕入れた古着を最初は30点ほどお渡しします。<br><br>
-          <strong>🏭 大阪近郊の方</strong>は倉庫まで直接ピックアップが可能。実際に商品を手に取りながら選んで持ち帰れます<br class="br-sp">（優先対応）。<br><br>
-          <strong>📦 遠方の方</strong>は配送でお届け。商品はこちらでランダムに選定します。</p>
+        <h3 class="ph-wrap"><span class="ph">商品を受け取る</span></h3>
+        <p class="ph-wrap">
+          <span class="ph">会社が仕入れた古着を</span><span class="ph">最初は30点ほどお渡しします。</span><br><br>
+          <span class="ph"><strong>🏭 大阪近郊の方</strong>は倉庫にて</span><span class="ph">直接ピックアップ可能。</span><span class="ph">実際に商品を手に取って</span><span class="ph">選んでいただくことができます</span><span class="ph">（優先対応）。</span><br><br>
+          <span class="ph"><strong>📦 遠方の方</strong>は配送でお届け。</span><span class="ph">商品はこちらで</span><span class="ph">ランダムに選定します。</span></p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card">
         <div class="step-num">2</div>
         <div class="step-icon">📸</div>
-        <h3>写真を撮って出品する</h3>
-        <p>メルカリやヤフオクに出品。慣れれば2〜3時間で10点ほど出品できます。<br><br>出品したURLを<strong>専用アプリ</strong>に入力するだけで商品を一元管理。<strong>売上も自動集計</strong>されるので、面倒な計算は不要です。</p>
+        <h3 class="ph-wrap"><span class="ph">写真を撮って出品する</span></h3>
+        <p class="ph-wrap"><span class="ph">メルカリやヤフオクに出品。</span><span class="ph">慣れれば2〜3時間で</span><span class="ph">10点ほど出品できます。</span><br><br><span class="ph">出品したURLを<strong>専用アプリ</strong>に</span><span class="ph">入力するだけで</span><span class="ph">商品を一元管理。</span><span class="ph"><strong>売上も自動集計</strong>されるので</span><span class="ph">面倒な計算は不要です。</span></p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card">
         <div class="step-num">3</div>
         <div class="step-icon">💰</div>
-        <h3>売れたら発送・収益を受け取る</h3>
-        <p>売れた分の純利益を分配。<strong>専用アプリ</strong>から請求書を依頼するだけで、収益とお支払い分がすぐに分かります。<br><br>PayPayでの受け取りにも対応しています。</p>
+        <h3 class="ph-wrap"><span class="ph">売れたら発送・収益を受け取る</span></h3>
+        <p class="ph-wrap"><span class="ph">売れた分の純利益を分配。</span><span class="ph"><strong>専用アプリ</strong>から請求書を依頼するだけで</span><span class="ph">収益とお支払い分がすぐに分かります。</span><br><br><span class="ph">PayPayでの受け取りにも</span><span class="ph">対応しています。</span></p>
       </div>
     </div>
 
     <!-- Mid-page CTA -->
     <div class="mid-cta">
-      <p><strong>「自分にできるかな？」</strong>という方へ。最初の30点は一緒に進め方を確認しながら進めます。</p>
+      <p class="ph-wrap-left"><span class="ph"><strong>「自分にできるかな？」</strong>という方へ。</span><span class="ph">最初の30点は</span><span class="ph">進め方をしっかりサポートいたします。</span></p>
       <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">まず話を聞いてみる →</button>
     </div>
   </div>
@@ -1059,12 +1071,13 @@
 <section class="section" id="simulation">
   <div class="section-inner">
     <div class="section-eyebrow">収入シミュレーション</div>
-    <h2 class="section-title">実際いくら稼げるの？<br>正直に公開します。</h2>
-    <p class="section-lead">頑張った分だけ、きちんと返ってきます。<br>難しいことは抜きにして、正直な数字を見てください。</p>
+    <h2 class="section-title ph-wrap-left"><span class="ph">実際いくら稼げるの？</span><span class="ph">正直に公開します。</span></h2>
+    <p class="section-lead ph-wrap-left"><span class="ph">頑張った分だけ</span><span class="ph">きちんと返ってきます。</span><span class="ph">難しいことは抜きにして</span><span class="ph">正直な数字を見てください。</span></p>
 
     <div class="sim-grid">
       <!-- スタート -->
-      <div class="sim-card">
+      <div class="sim-card entry">
+        <span class="sim-badge">まずはここから</span>
         <div class="sim-icon">🌱</div>
         <div class="sim-level">START PLAN</div>
         <h3>スタートプラン<br><span style="font-size:0.85rem;font-weight:600;color:var(--gray)">慣れながら少しずつ始める</span></h3>
@@ -1073,11 +1086,11 @@
         <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約2〜3万円</span></div>
         <div class="sim-row"><span class="label">分配率</span><span class="value">55%</span></div>
         <div class="sim-earn-box">
-          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-label">あなたの成果報酬（目安）</div>
           <div class="earn-num">1.1〜1.65万円</div>
           <div class="earn-sub">ちょっとしたお小遣い以上の感覚</div>
         </div>
-        <p class="sim-quote">「まずここから始める方がほとんどです」</p>
+        <p class="sim-quote ph-wrap-left"><span class="ph">「まずここから</span><span class="ph">始める方が</span><span class="ph">ほとんどです」</span></p>
       </div>
 
       <!-- 慣れてきたら -->
@@ -1091,11 +1104,11 @@
         <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約7〜10万円</span></div>
         <div class="sim-row"><span class="label">分配率</span><span class="value">60%</span></div>
         <div class="sim-earn-box">
-          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-label">あなたの成果報酬（目安）</div>
           <div class="earn-num">4.2〜6万円</div>
           <div class="earn-sub">本業の給与に近い収入になってきます</div>
         </div>
-        <p class="sim-quote">「出品のスピードも上がり、楽しくなる段階」</p>
+        <p class="sim-quote ph-wrap-left"><span class="ph">「出品のスピードも上がり</span><span class="ph">楽しくなる段階」</span></p>
       </div>
 
       <!-- ベテラン -->
@@ -1109,7 +1122,7 @@
         <div class="sim-row"><span class="label">月間純利益目安</span><span class="value">約15〜20万円</span></div>
         <div class="sim-row"><span class="label">分配率</span><span class="value">70%</span></div>
         <div class="sim-earn-box">
-          <div class="earn-label">あなたの取り分（目安）</div>
+          <div class="earn-label">あなたの成果報酬（目安）</div>
           <div class="earn-num">10.5〜14万円</div>
           <div class="earn-sub">専業に近い収入レベル</div>
         </div>
@@ -1118,14 +1131,14 @@
     </div>
 
     <ul class="note note-list" style="margin-top:16px">
-      <li>販売価格は商品により異なります<br class="br-sp">（目安：800〜1,500円/点）</li>
-      <li>メルカリ手数料・送料を差し引いた純利益からの分配です</li>
-      <li>個人差があります。上記はあくまで参考値です</li>
+      <li><span class="ph-wrap-left"><span class="ph">販売価格は商品により異なります</span><span class="ph">（目安：800〜1,500円/点）</span></span></li>
+      <li><span class="ph-wrap-left"><span class="ph">メルカリ手数料・送料を差し引いた</span><span class="ph">純利益からの分配です</span></span></li>
+      <li><span class="ph-wrap-left"><span class="ph">個人差があります。</span><span class="ph">上記はあくまで参考値です</span></span></li>
     </ul>
 
     <!-- Mid-page CTA 2 -->
     <div class="mid-cta">
-      <p><strong>まずはスタートプランから。</strong>小さく始めて、慣れてから増やせばOKです。</p>
+      <p class="ph-wrap-left"><span class="ph"><strong>まずはスタートプランから。</strong></span><span class="ph">小さく始めて</span><span class="ph">慣れてから増やせばOKです。</span></p>
       <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料で相談する →</button>
     </div>
   </div>
@@ -1138,8 +1151,8 @@
 <section class="section" id="distribution">
   <div class="section-inner">
     <div class="section-eyebrow">報酬分配の仕組み</div>
-    <h2 class="section-title">積み上げるほど、報酬が増える。<br>シンプルな成果連動制。</h2>
-    <p class="section-lead">ノルマはありません。これまでの実績が積み上がるほど、あなたの成果報酬の割合が上がっていきます。</p>
+    <h2 class="section-title ph-wrap-left"><span class="ph">積み上げるほど</span><span class="ph">報酬が増える。</span><span class="ph">シンプルな成果連動制。</span></h2>
+    <p class="section-lead ph-wrap-left"><span class="ph"><strong>ノルマはありません。</strong></span><br><span class="ph">これまでの実績が積み上がるほど</span><span class="ph">あなたの成果報酬の割合が</span><span class="ph">上がっていきます。</span></p>
 
     <table class="dist-table">
       <thead>
@@ -1173,21 +1186,21 @@
       </tbody>
     </table>
 
-    <div class="dist-note">
-      売上の一部は<strong>システム運営費（商品の原価・手数料など）</strong>として会社に充当され、残りはすべて<strong>あなたへの成果報酬</strong>となります。
+    <div class="dist-note ph-wrap-left">
+      <span class="ph">売上の一部は<strong>システム運営費</strong></span><span class="ph">（商品の原価・手数料など）として</span><span class="ph">会社に充当され</span><span class="ph">残りはすべて</span><span class="ph"><strong>あなたへの成果報酬</strong>となります。</span>
     </div>
 
     <div class="dist-pin">
       <span>📌</span>
-      <span><strong>毎月リセットされません。</strong>締めは毎月行いますが、成果はゼロに戻らず累計で積み上がります。これまでの累計が増えるほど、成果報酬のステージが上がっていく仕組みです。</span>
+      <span class="ph-wrap-left"><span class="ph"><strong>毎月リセットされません。</strong></span><br><span class="ph">締めは毎月行いますが</span><span class="ph">成果はゼロに戻らず</span><span class="ph">累計で積み上がります。</span><span class="ph">これまでの累計が増えるほど</span><span class="ph">成果報酬のステージが</span><span class="ph">上がっていく仕組みです。</span></span>
     </div>
 
     <div class="dist-pin dist-pin--gold">
       <span>🎓</span>
-      <span><strong>累計15万円に到達したら、ひとつの区切り。</strong>ここまで積み上げた頃には、商品の目利き・値付け・売れ筋の見極めなど、ひと通りのスキルが身についています。その実力をもって、自分で仕入れて自由に売る<strong>「完全自由販売」へ移行</strong>できます（もちろん、そのまま続けてもOKです）。</span>
+      <span class="ph-wrap-left"><span class="ph"><strong>累計15万円に到達したら</strong></span><span class="ph"><strong>ひとつの区切り。</strong></span><br><span class="ph">ここまで積み上げた頃には</span><span class="ph">商品の目利き・</span><span class="ph">値付け・</span><span class="ph">売れ筋の見極めなど</span><span class="ph">ひと通りのスキルが</span><span class="ph">身についています。</span><span class="ph">その実力をもって</span><span class="ph">自分で仕入れて自由に売る</span><span class="ph"><strong>「完全自由販売」へ移行</strong>できます</span><span class="ph">（もちろん、</span><span class="ph">そのままのプランで</span><span class="ph">続けても</span><span class="ph">OKです）。</span></span>
     </div>
 
-    <p class="note" style="margin-top:12px">※ 純利益 ＝ 販売価格 − 販売手数料 − 送料 − 梱包費。返品が確定したあとに算出します。月ごとに締めるのは集計のタイミングを区切るためで、成果そのものは累計で評価します。</p>
+    <p class="note ph-wrap-left" style="margin-top:12px"><span class="ph">※ 純利益 ＝</span><span class="ph">販売価格 − 販売手数料</span><span class="ph">− 送料 − 梱包費。</span><span class="ph">費用が確定したあとに算出します。</span><span class="ph">月ごとに締めるのは</span><span class="ph">集計のタイミングを区切るためで</span><span class="ph">成果そのものは累計で評価します。</span></p>
   </div>
 </section>
 
@@ -1198,37 +1211,37 @@
 <section class="section" id="special">
   <div class="section-inner">
     <div class="section-eyebrow">特別プログラム</div>
-    <h2 class="section-title">さらに上を目指したい方へ</h2>
+    <h2 class="section-title ph-wrap-left"><span class="ph">さらに上を目指したい方へ</span></h2>
 
     <div class="reward-box">
       <div class="rew-eyebrow">TOP PARTNER SPECIAL</div>
-      <h3>🏆 累計15万円を達成した方は<br>「完全自由販売」へ移行できます</h3>
-      <p>これまでの成果が累計15万円に到達したパートナーには、特別な仕入れ制度への移行をご案内します。ここまで積み上げた頃には、ひと通りのスキルが身についているはず——それが、ひとつの区切りです。<br>そこに至るまでの道のりも、ひとりで抱え込む必要はありません。売上を伸ばすコツ、商品の目利き、季節トレンドの読み方——まるで店舗オーナーが身につけるようなノウハウを、一緒に歩みながらお伝えしていきます。</p>
+      <h3 class="ph-wrap-left"><span class="ph">🏆 累計15万円を</span><span class="ph">達成した方は</span><span class="ph">「完全自由販売」へ</span><span class="ph">移行できます</span></h3>
+      <p class="ph-wrap-left"><span class="ph">これまでの成果が</span><span class="ph">累計15万円に到達した</span><span class="ph">パートナーには</span><span class="ph">特別な仕入れ制度への</span><span class="ph">移行をご案内します。</span><span class="ph">ここまで積み上げた頃には</span><span class="ph">ひと通りのスキルが</span><span class="ph">身についているはず——</span><span class="ph">それが</span><span class="ph">ひとつの区切りです。</span><span class="ph">そこに至るまでの道のりも</span><span class="ph">ひとりで抱え込む必要はありません。</span><span class="ph">売上を伸ばすコツ・</span><span class="ph">商品の目利き・</span><span class="ph">季節トレンドの読み方——</span><span class="ph">まるで店舗オーナーが</span><span class="ph">身につけるようなノウハウを</span><span class="ph">一緒に歩みながら</span><span class="ph">お伝えしていきます。</span></p>
 
       <div class="reward-features">
         <div class="reward-feat">
           <div class="rf-icon">⚖️</div>
           <div>
             <div class="rf-label">kg単価500円で直接仕入れ</div>
-            <div class="rf-text">仕分け済みの商品をkg単価500円で直接仕入れ可能。1kgあたり平均6〜8点の商品が含まれます。</div>
+            <div class="rf-text ph-wrap-left"><span class="ph">仕分け済みの商品を</span><span class="ph">kg単価500円で直接仕入れ可能。</span><span class="ph">1kgあたり平均6〜8点の商品が含まれます。</span></div>
           </div>
         </div>
         <div class="reward-feat">
           <div class="rf-icon">🆓</div>
           <div>
             <div class="rf-label">販売方法・価格・タイミングはすべて自由</div>
-            <div class="rf-text">どのプラットフォームで、いくらで、いつ売るかはすべてあなたが決められます。</div>
+            <div class="rf-text ph-wrap-left"><span class="ph">どのプラットフォームで</span><span class="ph">いくらで</span><span class="ph">いつ売るかはすべてあなたが決められます。</span></div>
           </div>
         </div>
         <div class="reward-feat">
           <div class="rf-icon">💯</div>
           <div>
             <div class="rf-label">利益は100%あなたのもの</div>
-            <div class="rf-text">仕入れ代金以外の費用はなし。売り上げた利益はすべて手元に残ります。</div>
+            <div class="rf-text ph-wrap-left"><span class="ph">仕入れ代金以外の費用はなし。</span><span class="ph">売り上げた利益はすべて手元に残ります。</span></div>
           </div>
         </div>
       </div>
-      <p class="reward-note">※ 仕分け済み・検品済みの商品をお渡しします ／ 仕入れ量・タイミングはご相談ください ／ 商品構成により内容は変動します</p>
+      <p class="reward-note ph-wrap-left"><span class="ph">※ 仕分け済み・</span><span class="ph">検品済みの商品をお渡しします ／</span><span class="ph">仕入れ量・</span><span class="ph">タイミングはご相談ください ／</span><span class="ph">商品構成により内容は変動します</span></p>
     </div>
   </div>
 </section>
@@ -1240,37 +1253,37 @@
 <section class="section" id="why">
   <div class="section-inner">
     <div class="section-eyebrow">続けられる理由</div>
-    <h2 class="section-title">なぜ続けられるのか。<br>正直にお話しします。</h2>
+    <h2 class="section-title ph-wrap-left"><span class="ph">なぜ続けられるのか。</span><span class="ph">正直にお話しします。</span></h2>
 
     <div class="why-grid">
       <div class="why-card">
         <div class="w-icon">⏰</div>
         <h3>時間の自由</h3>
-        <p>出勤・シフト・締め切りなし。「今日は出品しよう」と思ったときに動けばいい。家事や育児の合間でも十分続けられます。</p>
+        <p class="ph-wrap"><span class="ph">出勤・シフト・締め切りなし。</span><span class="ph">「今日は出品しよう」と</span><span class="ph">思ったときに動けばいい。</span><span class="ph">家事や育児の合間でも</span><span class="ph">十分続けられます。</span></p>
       </div>
       <div class="why-card">
         <div class="w-icon">📊</div>
         <h3>透明な分配の仕組み</h3>
-        <p>「いくらもらえるか分からない」を無くすため、純利益に基づいた明確な分配ルールを採用。毎月の計算結果は、ご自身でいつでもご確認いただけます。</p>
+        <p class="ph-wrap"><span class="ph">「いくらもらえるか分からない」を無くすため</span><span class="ph">純利益に基づいた</span><span class="ph">明確な分配ルールを採用。</span><span class="ph">毎月の計算結果は</span><span class="ph">ご自身でいつでもご確認いただけます。</span></p>
       </div>
       <div class="why-card">
         <div class="w-icon">🤝</div>
         <h3>万全のサポート体制</h3>
-        <p>導入から運用まで完全伴走。最初だけではなく、つまずいたらいつでも相談できます。画面の前で一人で悩む必要はありません。</p>
+        <p class="ph-wrap"><span class="ph">導入から運用まで完全伴走。</span><span class="ph">最初だけではなく</span><span class="ph">つまずいたらいつでも相談できます。</span><span class="ph">画面の前で一人で悩む必要はありません。</span></p>
       </div>
       <div class="why-card">
         <div class="w-icon">🛡️</div>
         <h3>在庫・赤字リスクなし</h3>
-        <p>商品はすべて会社が用意するので、売れ残っても自己負担はありません。リスクを抱えずに挑戦できます。</p>
+        <p class="ph-wrap"><span class="ph">商品はすべて会社が用意するので</span><span class="ph">売れ残っても自己負担はありません。</span><span class="ph">リスクを抱えずに挑戦できます。</span></p>
       </div>
     </div>
 
     <!-- 正直メッセージ -->
     <div style="background:linear-gradient(135deg,#5C4A3A,#786150);border-radius:20px;padding:26px 24px 22px;margin-top:30px;color:#F1F5F9;box-shadow:0 12px 32px rgba(60,45,30,0.25);">
       <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(253,230,138,0.15);border:1px solid rgba(253,230,138,0.4);border-radius:999px;padding:4px 14px;font-size:0.78rem;font-weight:700;color:#FDE68A;letter-spacing:0.04em;margin-bottom:14px;">💬 本音でお伝えします</span>
-      <p style="font-size:0.93rem;line-height:1.8;opacity:0.9;">
-        これは楽して稼げるモデルではありません。毎日コツコツ出品し続けることが求められます。<br>
-        ただ、それができる方にとっては、<strong style="color:#FDE68A;">在庫リスクなし・赤字リスクなし</strong>という強みを活かして、着実に副収入を積み上げられる仕組みです。
+      <p class="ph-wrap-left" style="font-size:0.93rem;line-height:1.8;opacity:0.9;">
+        <span class="ph">これは楽して</span><span class="ph">稼げるモデルではありません。</span><span class="ph">毎日コツコツ出品し続けることが</span><span class="ph">求められます。</span><br>
+        <span class="ph">ただ、それができる方にとっては</span><span class="ph"><strong style="color:#FDE68A;">在庫リスクなし・</strong></span><span class="ph"><strong style="color:#FDE68A;">赤字リスクなし</strong>という</span><span class="ph">強みを活かして</span><span class="ph">着実に副収入を</span><span class="ph">積み上げられる仕組みです。</span>
       </p>
     </div>
   </div>
@@ -1283,62 +1296,62 @@
 <section class="section" id="faq">
   <div class="section-inner">
     <div class="section-eyebrow">よくある質問</div>
-    <h2 class="section-title">不安を解消してから、始めましょう。</h2>
+    <h2 class="section-title ph-wrap-left"><span class="ph">不安を解消してから</span><span class="ph">始めましょう。</span></h2>
 
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">フリマアプリの経験がなくても大丈夫ですか？</div>
-        <div class="faq-a">大丈夫です。出品のコツをお伝えし、商品管理は専用アプリで簡単に行えます。最初の30点は一緒に進め方を確認しながら進めます。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">フリマアプリの経験がなくても</span><span class="ph">大丈夫ですか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">大丈夫です。</span><span class="ph">出品のコツをお伝えし</span><span class="ph">商品管理は</span><span class="ph">専用アプリで</span><span class="ph">簡単に行えます。</span><span class="ph">最初の30点は</span><span class="ph">一緒に進め方を確認しながら進めます。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">どんな商品が届きますか？</div>
-        <div class="faq-a">Tシャツ・パーカー・ジーンズ・ジャケット・コートなど様々なアイテムがランダムに入っています。仕分け・検品は会社で行いますので、使える商品のみお渡しします。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">どんな商品が届きますか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">Tシャツ・パーカー・</span><span class="ph">ジーンズ・ジャケット・</span><span class="ph">コートなど</span><span class="ph">様々なアイテムが</span><span class="ph">ランダムに入っています。</span><span class="ph">仕分け・検品は会社で行いますので</span><span class="ph">使える商品のみお渡しします。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">1日何時間くらい必要ですか？</div>
-        <div class="faq-a">慣れれば2〜3時間で10点出品できます。まとまった時間が取れない方は、1日2〜3点ずつでも問題ありません。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">1日何時間くらい必要ですか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">慣れれば2〜3時間で</span><span class="ph">10点出品できます。</span><span class="ph">まとまった時間が取れない方は</span><span class="ph">1日2〜3点ずつでも問題ありません。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">ノルマや義務はありますか？</div>
-        <div class="faq-a">ありません。ただし長期間動きのない場合はご連絡することがあります。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">ノルマや義務はありますか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">ありません。</span><span class="ph">ただし長期間動きのない場合は</span><span class="ph">ご連絡することがあります。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">商品が売れなかった場合は？</div>
-        <div class="faq-a">値下げやまとめ売りでの対応をご案内します。完全に売れない場合の対応も会社がサポートします。赤字になるリスクはありません。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">商品が売れなかった場合は？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">値下げやまとめ売りでの</span><span class="ph">対応をご案内します。</span><span class="ph">完全に売れない場合の対応も</span><span class="ph">会社がサポートします。</span><span class="ph">赤字になるリスクはありません。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">最初にかかる費用はありますか？</div>
-        <div class="faq-a">商品代金は不要です（会社負担）。発送用の梱包材だけご用意いただければ始められます。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">最初にかかる費用はありますか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">商品代金は不要です（会社負担）。</span><span class="ph">発送用の梱包材だけご用意いただければ</span><span class="ph">始められます。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">どのくらいの場所が必要ですか？（在庫を置くスペース）</div>
-        <div class="faq-a">商品は段ボール箱や衣装ケースで保管していただく形になります。始めたばかりの頃は1〜3ケースほどなので、大きなスペースは必要ありません。販売量が増えて「完全自由販売」の段階になると、衣装ケースで10〜15ケースほどの保管場所があると安心です。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">どのくらいの場所が必要ですか？</span><span class="ph">（在庫を置くスペース）</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">商品は段ボール箱や衣装ケースで</span><span class="ph">保管していただく形になります。</span><span class="ph">始めたばかりの頃は</span><span class="ph">1〜3ケースほどなので</span><span class="ph">大きなスペースは必要ありません。</span><span class="ph">販売量が増えて</span><span class="ph">「完全自由販売」の段階になると</span><span class="ph">衣装ケースで10〜15ケースほどの</span><span class="ph">保管場所があると安心です。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">価格設定はどうやって決めるのですか？</div>
-        <div class="faq-a">販売する媒体（メルカリなど）で同じような商品を直接検索したり、AI検索でブランドや相場を調べたりして確認できます。そうして調べた相場をもとに価格を決めていただく形なので、初めての方でも迷いません。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">価格設定はどうやって</span><span class="ph">決めるのですか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">販売する媒体（メルカリなど）で</span><span class="ph">同じような商品を直接検索したり</span><span class="ph">AI検索でブランドや相場を調べたりして</span><span class="ph">確認できます。</span><span class="ph">そうして調べた相場をもとに</span><span class="ph">価格を決めていただく形なので</span><span class="ph">初めての方でも迷いません。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">商品の状態が知りたいです</div>
-        <div class="faq-a">一番分かりやすいのは、倉庫へ直接見にお越しいただく方法です。実際の商品を手に取ってご確認いただけますので、大阪近郊の方はぜひ一度お立ち寄りください。もちろん、検品・仕分けを済ませた販売できる状態の商品をお渡ししていますので、ご安心ください。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">商品の状態が知りたいです</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">一番分かりやすいのは</span><span class="ph">倉庫へ直接</span><span class="ph">見にお越しいただく方法です。</span><span class="ph">実際の商品を</span><span class="ph">手に取って</span><span class="ph">ご確認いただけますので</span><span class="ph">大阪近郊の方は</span><span class="ph">ぜひ一度お立ち寄りください。</span><span class="ph">もちろん</span><span class="ph">検品・仕分けを済ませた</span><span class="ph">販売できる</span><span class="ph">状態の商品を</span><span class="ph">お渡ししていますので</span><span class="ph">ご安心ください。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">締め日・支払い日はいつですか？</div>
-        <div class="faq-a">毎月、月初から月末までで締め、お支払いは翌月10日に行います。専用アプリから請求書を依頼するだけで、PayPayでの受け取りにも対応しています。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">締め日・支払い日はいつですか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">毎月、月初から月末までで締め</span><span class="ph">お支払いは翌月10日に行います。</span><span class="ph">専用アプリから請求書を依頼するだけで</span><span class="ph">PayPayでの</span><span class="ph">受け取りにも</span><span class="ph">対応しています。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">梱包材はどこで仕入れますか？</div>
-        <div class="faq-a">主な梱包材は、ダイソーやセリアなどの100円ショップで手軽に揃えられます。おすすめの梱包材もご案内しますので、最小限のコストで始められます。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">梱包材はどこで仕入れますか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">主な梱包材は</span><span class="ph">ダイソーやセリアなどの</span><span class="ph">100円ショップで手軽に揃えられます。</span><span class="ph">おすすめの梱包材もご案内しますので</span><span class="ph">最小限のコストで始められます。</span></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">続けられなくなった場合、手元の商品はどうなりますか？</div>
-        <div class="faq-a">手元に残った商品は、会社へ送り返していただければ問題ありません（送料のみご負担をお願いしています）。無理に売り切る必要はありませんので、ご安心ください。</div>
+        <div class="faq-q"><span class="ph-wrap-left"><span class="ph">続けられなくなった場合</span><span class="ph">手元の商品はどうなりますか？</span></span></div>
+        <div class="faq-a ph-wrap-left"><span class="ph">手元に残った商品は</span><span class="ph">会社へ</span><span class="ph">送り返していただければ</span><span class="ph">問題ありません</span><span class="ph">（送料のみご負担をお願いしています）。</span><span class="ph">無理に売り切る必要はありませんので</span><span class="ph">ご安心ください。</span></div>
       </div>
     </div>
 
     <!-- Mid-page CTA 3 -->
     <div class="mid-cta" style="margin-top:32px">
-      <p>他にも気になることがあれば、<strong>お気軽にご質問ください。</strong>答えられることはすべてお伝えします。</p>
+      <p class="ph-wrap-left"><span class="ph">他にも気になることがあれば</span><span class="ph"><strong>お気軽にご質問ください。</strong></span><span class="ph">答えられることはすべてお伝えします。</span></p>
       <button class="btn-mid-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">質問してみる →</button>
     </div>
   </div>
@@ -1350,11 +1363,9 @@
 ════════════════════════════════════ -->
 <div class="nudge">
   <div style="max-width:600px;margin:0 auto;">
-    <h2>「どうせ続かないかも」と<br>思っているあなたへ</h2>
-    <p>
-      最初の30点を出品してみてください。<br>
-      売れた瞬間の感覚が、きっと変わります。<br>
-      コツコツが報われる仕事を、一緒に始めましょう。
+    <h2 class="ph-wrap"><span class="ph">「どうせ続かないかも」と</span><span class="ph">思っているあなたへ</span></h2>
+    <p class="ph-wrap">
+      <span class="ph">最初の30点を出品してみてください。</span><span class="ph">売れた瞬間の感覚が</span><span class="ph">きっと変わります。</span><span class="ph">コツコツが報われる仕事を</span><span class="ph">一緒に始めましょう。</span>
     </p>
     <button class="btn-cta-nudge" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       まずは無料で相談してみる
@@ -1368,12 +1379,11 @@
 ════════════════════════════════════ -->
 <section class="cta-final" id="contact">
   <div style="max-width:620px;margin:0 auto;">
-    <h2>まずは話を聞くだけでも、<br>大歓迎です。</h2>
-    <p class="cta-copy">
-      「向いているかな」「自分にできるかな」<br>
-      そんな不安はよくあります。まずはお気軽にお問い合わせください。
+    <h2 class="ph-wrap"><span class="ph">まずは話を聞くだけでも</span><span class="ph">大歓迎です。</span></h2>
+    <p class="cta-copy ph-wrap">
+      <span class="ph">「向いているかな」</span><span class="ph">「自分にできるかな」</span><span class="ph">そんな不安はよくあります。</span><span class="ph">まずはお気軽にお問い合わせください。</span>
     </p>
-    <p class="no-pressure">強引な勧誘は一切しておりません。</p>
+    <p class="no-pressure ph-wrap"><span class="ph">強引な勧誘は一切しておりません。</span></p>
 
     <div class="cta-buttons-row">
       <button class="btn-cta-main" onclick="window.location.href='tel:0665616102'">
